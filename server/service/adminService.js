@@ -1,4 +1,4 @@
-const userDb = require('../db/userDb.js')
+const userDb = require('../db/adminDb.js')
 
 // 注册
  function reg(username,passwd,cb) { 

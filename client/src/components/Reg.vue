@@ -1,22 +1,22 @@
 <template>
 	<div class="box" :style="box">
 	<div class="login">
-		<div><h1>后台注册系统</h1></div>
+		<div><h1>欢迎注册</h1></div>
 		<div>
 			 <div class="name">
-        	账号：<input type="text" v-model="users.name" @blur="blur" placeholder="请输入账号..."/>
+        	    <span>账号：</span><input type="text" v-model="users.name" @blur="blur" placeholder="请输入账号..."/>
                 <div v-if="kong">账号不能为空！</div>
                 <div v-if="exsit">账号已存在！</div>
               </div>
               <div class="pwd">
-    	          密码：<input type="password" v-model="users.pwd" placeholder="请输入密码..."/>
-                <div v-if="mima1">密码不能为空！</div>
-                <div v-if="mima2">密码错误！</div>
+    	          <span>密码：</span><input type="password" v-model="users.pwd" placeholder="请输入密码..."/>
+                  <div v-if="mima1">密码不能为空！</div>
+                  <div v-if="mima2">密码错误！</div>
               </div>
               <div class="pwd">
-    	          确认：<input type="password" v-model="users.pwd1" placeholder="请确认密码..."/>
-                <div v-if="mima3">两次密码不同！</div>
-              </div>
+    	          <span>确认：</span><input type="password" v-model="users.pwd1" placeholder="请确认密码..."/>
+                  <div v-if="mima3">两次密码不同！</div>
+                  </div>
               <div><button @click="reg"><a href="javascript:void(0)">注册</a></button></div>
 		</div>
        
@@ -28,7 +28,7 @@
 
 <script>
 	export default {
-		name:"Login",
+		name:"Reg",
 		data(){
   	return{
   		box:{
@@ -55,7 +55,7 @@
          	this.kong=true
          }else{
          	this.kong=false
-         	this.$http.get('http://localhost:9999/adminreg.do',{
+         	this.$http.get('http://localhost:9999/userreg.do',{
             params: {
 					  name: this.users.name,
 					  pwd: this.users.pwd
@@ -86,7 +86,7 @@
          	this.mima3=true
          }else{
          	this.mima3=false
-         	this.$http.post('http://localhost:9999/adminreg.do',
+         	this.$http.post('http://localhost:9999/userreg.do',
             this.users, {
 						transformRequest: [
 							function(data) {
@@ -100,7 +100,7 @@
 					}).then((result)=>{
         	console.log(result)
         	
-        		this.$router.push('adminlogin')
+        		this.$router.push('login')
         	
         	 
         }).catch((err)=>{
@@ -122,18 +122,25 @@
 </script>
 
 <style scoped="scoped">
+	input{
+		height: 25px;
+		border: 1px solid sienna;
+		padding-left: 3px;
+	}
+	h1,span{
+		color: brown;
+	}
 	.login{
 		width: 400px;
 		height: 250px;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
-		background-color: #ACE6F9;
-		border: 20px solid rgba(0,134,193,0.4);
+		background-color: rgba(42,121,160,0.3);
 		border-radius: 5px;
 	}
 	.login>div:last-child{
-		height: 130px;
+		height: 160px;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
@@ -148,20 +155,21 @@
 		text-decoration: none;
 		color: whitesmoke;
 		font-weight: bold;
-		background-color: #2CBFF0;
-		border-radius: 5px;
-		border: none;
+		background-color: sienna;
+		border-radius: 10px;
 	}
 	button>a:hover{
-		background-color:#24B2E0
+		background-color:sienna;
+		opacity: 0.8;
 	}
 	button{
-		border: none;
+		border: 1px solid sandybrown;
+		border-radius: 10px;
 	}
 	.box{
 		width: 100%;
 		height: 100%;
-		background-image: url("../assets/back.jpg");
+		background-image: url("../assets/userback.jpg");
 		background-size: 100% 100%;
 		display: flex;
 		justify-content: center;

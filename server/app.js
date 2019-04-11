@@ -9,7 +9,7 @@ const adminService=require("./service/adminService")
 const userService=require("./service/userService")
 //管理员注册
 app.get("/adminreg.do", function(req, res) {
-	res.setHeader("Access-Control-Allow-Origin","http://localhost:9999")
+	res.setHeader("Access-Control-Allow-Origin","*")
 	console.log(req.query)
 	let username=req.query.name
 	let passwd=req.query.passwd
@@ -119,7 +119,7 @@ app.post("/userreg.do",function(req,res){
 //判断账号是否存在
 app.get("/userlogin.do", function(req, res) {
 	res.setHeader("Access-Control-Allow-Origin","*")
-	console.log(req.query)
+//	console.log(req.query)
 	let username=req.query.name
 	let passwd=req.query.passwd
 
@@ -136,7 +136,7 @@ app.get("/userlogin.do", function(req, res) {
 
 app.post("/userlogin.do",function(req,res){
 	res.setHeader("Access-Control-Allow-Origin","*")
-	console.log(req.body)
+//	console.log(req.body)
 	let username = req.body.name;
 	let passwd = req.body.pwd;
 
@@ -150,6 +150,26 @@ app.post("/userlogin.do",function(req,res){
 		}
 	})
 	
+});
+
+//接收管理者请求数据
+const xianglianService=require("./service/xianglianService")
+app.get("/xianglian", function(req, res) {
+	res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
+    xianglianService.xianglian(function(results) {
+//  	console.log(results)
+		res.send(results)
+	})
+});
+//删除数据
+app.get("/xiangliandel", function(req, res) {
+	res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
+    console.log(req.query)
+    let id=req.query.id
+    xianglianService.xiangliandel(id,function(results) {
+//  	console.log(results)
+		res.send(results)
+	})
 });
 
 app.listen(9999, function() {
