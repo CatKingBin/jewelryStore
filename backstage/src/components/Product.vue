@@ -38,8 +38,8 @@
         </template>
         <el-menu-item-group>
           <router-link to="/xianglian"><el-menu-item index="1-1">项链</el-menu-item></router-link>
-          <el-menu-item index="1-2">耳饰</el-menu-item>
-          <el-menu-item index="1-3">首饰</el-menu-item>
+          <router-link to="/ershi"><el-menu-item index="1-2">耳饰</el-menu-item></router-link>
+          <el-menu-item index="1-3">手饰</el-menu-item>
           <el-menu-item index="1-4">戒指</el-menu-item>
         </el-menu-item-group>
       </el-submenu>

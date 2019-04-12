@@ -6,6 +6,7 @@ import Product from '@/components/Product'
 import Index from '@/components/Index'
 import XiangLian from '@/components/XiangLian'
 
+
 Vue.use(Router)
 
 export default new Router({
@@ -24,17 +25,18 @@ export default new Router({
       path: '/product',
       name: 'Product',
       component: Product,
-      children:[
-      {
-      	path: '/product',
-        name: 'Index',
-        component: Index,
+      children: [
+        {
+      	  path: '/product',
+          name: 'Index',
+          component: Index,
       },
       {
       	path: '/xianglian',
         name: 'XiangLian',
         component: XiangLian,
       }
+     
       ]
     }
   ]

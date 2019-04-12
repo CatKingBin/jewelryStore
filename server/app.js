@@ -156,11 +156,22 @@ app.post("/userlogin.do",function(req,res){
 const xianglianService=require("./service/xianglianService")
 app.get("/xianglian", function(req, res) {
 	res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
-    xianglianService.xianglian(function(results) {
-//  	console.log(results)
+	let index=req.query.index;
+    xianglianService.xianglian(index,function(results) {
+		
 		res.send(results)
 	})
 });
+
+app.get("/necklaceNum", function(req, res) {
+	res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
+	
+    xianglianService.getNecklaceNum(function(results) {
+		
+		res.send(results)
+	})
+});
+
 //删除数据
 app.get("/xiangliandel", function(req, res) {
 	res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
@@ -171,6 +182,42 @@ app.get("/xiangliandel", function(req, res) {
 		res.send(results)
 	})
 });
+//批量删除
+app.get("/xiangliandelall", function(req, res) {
+	res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
+    // console.log(req.query.arrid)
+    let arrid=req.query.arrid
+    xianglianService.xiangliandelall(arrid,function(results) {
+//  	console.log(results)
+		res.send(results)
+	})
+});
+
+//增加商品
+app.get("/xianglianadd", function(req, res) {
+	res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
+	// console.log(req.query.obj)
+	let obj=req.query.obj
+	let objs=JSON.parse(obj)
+	// console.log(objs)
+    xianglianService.xianglianadd(objs,function(results) {
+//  	console.log(results)
+		res.send(results)
+	})
+});
+
+//查询商品
+app.get("/xianglianfond", function(req, res) {
+	res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
+	// console.log(req.query.storename)
+	let storename=req.query.storename
+    xianglianService.xianglianfond(storename,function(results) {
+//  	console.log(results)
+		res.send(results)
+	})
+});
+
+
 
 app.listen(9999, function() {
 	console.log("服务器正在监听中9999...");
