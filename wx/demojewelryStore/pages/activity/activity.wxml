@@ -1,0 +1,65 @@
+<!--pages/activity/activity.wxml-->
+<view class='bgc'>
+  <view class='yhj-view'>
+    <view class='yhj-view-red'>
+      <view class='yhj-title'>优惠券</view>
+<!-- 优惠券 wx:for -->
+      <view class='yhj-one'  wx:for="{{yhj}}">
+         <view class='yhj-one-mon'>
+          <text class='yhj-one-logo'>￥</text>{{item.num}}
+         </view>
+         <view class='yhj-one-man'>
+           <view>满{{item.man}}可使用</view>
+           <view class='yhj-one-man-data'>2019.3.1 - 2019.6.30</view>
+         </view>
+         <view class='yhj-one-li'>
+          <view class='yhj-one-liji'>立即领取</view>
+         </view>
+      </view>
+<!-- 结束 -->
+      <view class='more' wx:if="{{more}}" bindtap='onClickmore'>还有更多</view>
+    </view>
+  </view>
+  <view class='cuxiao'>促销</view>
+  <view class='manjian'>
+    <view class='manjian-view'>
+      <view class='manjian-title'>
+        <view class='qdhd'> 全店活动 </view>
+        <view class='man-30'>满30元包邮</view>
+      </view>
+      <view class='manjian-img'>
+        <view class='manjian-img-one'>
+          <image src='https://gw.alicdn.com/bao/uploaded/i2/367859690/O1CN01EJuVwX2LS4McrY5C0_!!367859690.jpg_220x10000Q75.jpg_.webp'></image>
+        </view>
+        <view class='manjian-img-one'>
+          <image src='https://gw.alicdn.com/bao/uploaded/i3/367859690/O1CN01bezqHO2LS4OJj4VBW_!!367859690.jpg_220x10000Q75.jpg_.webp'></image>
+        </view>
+        <view class='manjian-img-one'>
+          <image src='https://gw.alicdn.com/bao/uploaded/i3/367859690/O1CN01ij7HHd2LS4MxmKlhe_!!367859690.jpg_220x10000Q75.jpg_.webp'></image>
+        </view>
+      </view>
+      <view class='manjian-footer'> 79 天 0 小时 56 分 活动结束</view>
+    </view>
+  </view>
+  <view class='cuxiao'>金币专区</view>
+  <view class='manjian'>
+    <view class='manjian-view'>
+      <view class='manjian-title'>
+       
+        <view class='man-30'>金币抵钱</view>
+      </view>
+      <view class='manjian-img'>
+        <view class='manjian-img-one'>
+          <image src='https://gw.alicdn.com/imgextra/i2/367859690/O1CN012LS4LRw1ieUJVmN_!!367859690.jpg_220x10000Q75.jpg_.webp'></image>
+        </view>
+        <view class='manjian-img-one'>
+          <image src='https://gw.alicdn.com/imgextra/i2/367859690/O1CN012LS4LQ1Tbw1rhjs_!!367859690.jpg_220x10000Q75.jpg_.webp'></image>
+        </view>
+        <view class='manjian-img-one'>
+          <image src='https://gw.alicdn.com/imgextra/i1/367859690/O1CN012LS4LR7Hr2d8Syl_!!367859690.jpg_220x10000Q75.jpg_.webp'></image>
+        </view>
+      </view>
+      <view class='jinbi-footer'></view>
+    </view>
+  </view>
+</view>

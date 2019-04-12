@@ -10,7 +10,7 @@
             <span>账号：</span>
             <input type="text" v-model="users.name" @blur="blur" placeholder="请输入账号...">
             <div v-if="kong">账号不能为空！</div>
-            <div v-if="exsit">账号不存在！</div>
+            <div v-if="exsit">账号不存在！抵押人呀</div>
           </div>
           <div class="pwd">
             <span>密码：</span>

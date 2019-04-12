@@ -1,0 +1,64 @@
+<!--pages/product/product.wxml-->
+<view class='bgc'>
+  <!-- 导航栏 -->
+  <!-- <scroll-view class='view-container' scroll-x="ture">
+    <view class='bar'>
+      <block wx:for="{{bar}}">
+        <view class='item {{active==index?"active":""}}' bindtap='onClick' data-id='{{index}}'>{{item}}</view>
+      </block>
+    </view>
+  </scroll-view> -->
+  <view class='nev-view'>
+    <view class='nav-text {{activea==1?"active":""}}' bindtap='onClicka'> 综合</view>
+    <view class='nav-text {{activeb==1?"active":""}}' bindtap='onClickb'> 销量</view>
+    <view class='nav-text {{activec==1?"active":""}}' bindtap='onClickc'> 新品</view>
+    <view class='nav-text nav-text-price {{actived==1?"active":""}}' bindtap='onClickd'> 价格
+      <view class='s'>
+        <image class='imgs' src="{{s}}"></image>
+        <image class='imgx' src="{{x}}"></image>
+      </view>
+    </view>
+    <view class='nav-text  {{activee==1?"active":""}}' bindtap='onClicke'>
+      <image class='xs' src="{{xs}}"></image>
+    </view>
+  </view>
+
+  <!-- 商品区 -->
+  <view wx:if="{{pro}}" class='product-view'>
+    <view class='product-one' wx:for="{{products}}">
+      <view class='product-pic-view'>
+        <image src='{{item.imgsrc}}'></image>
+      </view>
+      <view class='product-text-view'>
+        <view class='product-text-title'>
+          <text>{{item.title}}</text>
+        </view>
+        <view class='product-price-view'>
+          <text class='product-price-logo'>￥</text>
+          <text class='product-price-number'>{{item.price}}</text>
+          <text class='product-price-pay'>{{item.pay}}人付款</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:else class='prod'>
+    <view class='prod-view' wx:for="{{products}}">
+      <view class='prod-view-img'>
+        <image src='{{item.imgsrc}}'></image>
+      </view>
+      <view class='prod-view-text'>
+        <view class='prod-text-title'>
+          <text>{{item.title}}</text>
+        </view>
+        <text class='prode-text-baoyou'>包邮</text>
+        <view class='prod-price-view'>
+          <text class='product-price-logo'>￥</text>
+          <text class='product-price-number'>{{item.price}}</text>
+          <text class='product-price-pay'>{{item.pay}}人付款</text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>

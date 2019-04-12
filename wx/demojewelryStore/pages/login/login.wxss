@@ -1,0 +1,42 @@
+/* pages/login/login.wxss */
+.bgimg {
+  width: 100%;
+  height: 1354rpx;
+  background-image: url("https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3392250770,3518214533&fm=15&gp=0.jpg");
+  background-size: 100% 100%;
+  /* opacity:0.50; */
+}
+
+.touxiang {
+  width: 300rpx;
+  height: 350rpx;
+  margin: auto;
+  /* background-image: url("http://img4.imgtn.bdimg.com/it/u=2730960486,1812539582&fm=26&gp=0.jpg"); */
+  background-size: 120% 120%;
+  /* opacity:1; */
+  border-radius: 150rpx;
+}
+
+image {
+  margin-top: 40rpx;
+  width: 300rpx;
+  height: 300rpx;
+  border-radius: 150rpx;
+}
+
+.login_form {
+  border-radius: 5px;
+  background-color: rgba（255, 255, 255, 0.2）;
+  margin: 100rpx auto;
+  width: 345px;
+}
+.weui-input{
+border: 1px solid #b5a3a3;
+height: 80rpx;
+margin: 10rpx 100rpx
+}
+.weui-btn-area{
+  margin: auto;
+margin-top: 60rpx;
+width: 500rpx;
+}
