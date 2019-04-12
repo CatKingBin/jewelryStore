@@ -112,9 +112,8 @@ export default {
 
   mounted() {
     // 让send和resetForm函数在页面加载完后就执行
-    this.send(1);
     this.resetForm();
-    this.getNecklaceNum()
+    this.getNecklaceNum(this.page)
   },
 
   methods: {
@@ -176,7 +175,7 @@ export default {
             type: "success"
           });
           this.resetForm();
-          this.send();
+          this.getNecklaceNum(this.page)
         })
         .catch(function() {
           //请求失败
@@ -184,7 +183,7 @@ export default {
         });
     },
     send(index) {
-     
+    //  this.total=0
       //页面加载完时触发函数
       this.$http //发起ajax请求
         .get("http://localhost:9999/xianglian", {
@@ -195,11 +194,9 @@ export default {
         .then(result => {
           //请求成功
           console.log(result.data);
-          this.total = result.data.length;
-          
+         
           this.tableData = []; //清空数据列表
-          let page = this.page;
-            for (var i = (page-1)*7; i < result.data.length; i++) {
+            for (var i = 0; i < result.data.length; i++) {
               //使用循环插入请求得到的数据
               var obj = {}; //创建一个空对象接收数据
               obj.address = result.data[i].img;
@@ -216,8 +213,8 @@ export default {
           alert("失败");
         });
     },
-    getNecklaceNum(){
-
+    getNecklaceNum(val){
+      
       //页面加载完时触发函数
       this.$http //发起ajax请求
         .get("http://localhost:9999/necklaceNum", {})
@@ -225,7 +222,7 @@ export default {
           //请求成功
           console.log(result.data);
           this.total = result.data.length;
-         
+          this.send(val);
         })
         .catch(function() {
           //请求失败
@@ -233,6 +230,7 @@ export default {
         });
     },
     selsChange: function(sels) {
+      console.log(sels)
       //多选框选中时触发函数
       this.sels = sels; //将选中的数据放入sels
       // console.log(sels.length)
@@ -266,7 +264,7 @@ export default {
                 message: "删除成功",
                 type: "success"
               });
-              this.send(); //执行send函数来刷新数据列表
+             this.getNecklaceNum(this.page)
             })
             .catch(function() {
               //请求失败
@@ -300,7 +298,14 @@ export default {
                   message: "删除成功",
                   type: "success"
                 });
-                this.send(); //执行send函数来刷新数据列表
+                console.log(result.data.length)
+                if(result.data.length%7==0){
+                   this.getNecklaceNum(this.page-1)
+                }else{
+                   this.getNecklaceNum(this.page)
+                }
+               
+                // this.tableData.splice(index,1)
               })
               .catch(function() {
                 //请求失败
@@ -311,10 +316,11 @@ export default {
       }
     },
     handleCurrentChange(val) {
-      this.getNecklaceNum()
+      
+      //  this.getNecklaceNum(val)
       this.page = val;
       this.send(val);
-      
+     
       
       
     }

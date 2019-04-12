@@ -8,8 +8,8 @@ function selectXiangLian(index,cb) {
 			console.log(err)
 		} else { //连接成功,conn是连接对象
 			let sql = "select * from xianglian limit ?,?";
-			conn.query(sql,[(index-1)*7,index*7],function(err1, results) {
-                console.log(results)
+			conn.query(sql,[(index-1)*7,7],function(err1, results) {
+                // console.log(results)
 				cb(results);
 				//释放连接池
 				conn.release();
