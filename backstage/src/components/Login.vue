@@ -39,8 +39,8 @@
   		mima1:false,
   		mima2:false,
   		users:{
-  			name:'',
-  			pwd:''
+  			name:'xxx',
+  			pwd:'123'
   		}
   	}
   },

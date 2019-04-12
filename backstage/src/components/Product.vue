@@ -43,14 +43,18 @@
           <router-link to="/jiezhi"><el-menu-item index="1-4">戒指</el-menu-item></router-link>
         </el-menu-item-group>
       </el-submenu>
+			<router-link to="/yhhd">
       <el-menu-item index="2">
         <i class="el-icon-menu"></i>
-        <span slot="title">导航二</span>
+        <span slot="title">优惠活动</span>
       </el-menu-item>
+			</router-link>
+			<router-link to="/look">
       <el-menu-item index="4">
         <i class="el-icon-setting"></i>
-        <span slot="title">导航三</span>
+        <span slot="title">查看更多</span>
       </el-menu-item>
+			</router-link>
         </el-menu>
              </el-col>
               </el-row>

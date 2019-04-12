@@ -8,6 +8,10 @@ import XiangLian from '@/components/XiangLian'
 import ErShi from '@/components/ErShi'
 import ShouShi from '@/components/ShouShi'
 import JieZhi from '@/components/JieZhi'
+import Yhhd from '@/components/Yhhd'
+import Look from '@/components/Look'
+
+
 
 
 
@@ -36,6 +40,16 @@ export default new Router({
       	  path: '/product',
           name: 'Index',
           component: Index
+        },
+        {
+      	  path: '/yhhd',
+          name: 'Yhhd',
+          component: Yhhd
+        },
+        {
+      	  path: '/look',
+          name: 'Look',
+          component: Look
         },
         {
       	  path: '/xianglian',
