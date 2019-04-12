@@ -76,9 +76,10 @@
 
 <script>
 export default {
-  name: "XiangLian",
+  name: "ErShi",
   data() {
     return {
+      
       total: 0,
       page: 1,
       storename: "",
@@ -117,16 +118,19 @@ export default {
   },
 
   methods: {
+   
     fond() {
       //查询触发函数
+      // console.log(this.storename);
       this.$http //发起ajax请求
-        .get("http://localhost:9999/xianglianfond", {
+        .get("http://localhost:9999/ershifond", {
           params: {
             storename: this.storename //请求携带的参数
           }
         })
         .then(result => {
           //请求成功
+          //  console.log(result.data)
           this.storename = "";
           this.tableData = []; //清空数据列表
           for (var i = 0; i < result.data.length; i++) {
@@ -159,8 +163,9 @@ export default {
     },
     submitForm(formName) {
       //新增提交触发函数，formName是提交的数据（一个对象）
+      // console.log(formName)
       this.$http //发起ajax请求
-        .get("http://localhost:9999/xianglianadd", {
+        .get("http://localhost:9999/ershiadd", {
           params: {
             obj: formName //请求携带的参数
           }
@@ -181,14 +186,16 @@ export default {
     },
     send(index) {
       //页面加载完时触发函数
+      // console.log(index)
       this.$http //发起ajax请求
-        .get("http://localhost:9999/xianglian", {
+        .get("http://localhost:9999/ershi", {
          params:{
              index:index
          } 
         })
         .then(result => {
           //请求成功
+          // console.log(result.data);
           this.tableData = []; //清空数据列表
             for (var i = 0; i < result.data.length; i++) {
               //使用循环插入请求得到的数据
@@ -200,6 +207,7 @@ export default {
               obj.id = result.data[i].id;
               this.tableData.push(obj); //将对象添加到数组列表中
             }
+         
         })
         .catch(function() {
           //请求失败
@@ -209,9 +217,10 @@ export default {
     getNecklaceNum(val){
       //页面加载完时触发函数
       this.$http //发起ajax请求
-        .get("http://localhost:9999/necklaceNum", {})
+        .get("http://localhost:9999/ershiNum", {})
         .then(result => {
           //请求成功
+          // console.log(result.data);
           this.total = result.data.length;
           this.send(val);
         })
@@ -221,17 +230,22 @@ export default {
         });
     },
     selsChange: function(sels) {
+     
+      
       //多选框选中时触发函数
       this.sels = sels; //将选中的数据放入sels
+      // console.log(sels.length)
     },
     delAll: function() {
       //批量删除按钮触发函数
+      // console.log(this.sels);
       var arrid = []; //创建一个空数组来装载要传出的数据
       for (var i = 0; i < this.sels.length; i++) {
         //将选中的数据循环出来
         arrid.push(this.sels[i].id); //将每个数据的id 放入要传出的数组中
       }
       // 传一个数组出去
+      // console.log(arrid);
       this.$confirm("确认删除这些记录吗?", "提示", {
         //弹框
         type: "warning"
@@ -239,7 +253,7 @@ export default {
         .then(() => {
           //弹框"确定"按钮触发函数
           this.$http //发起ajax请求
-            .get("http://localhost:9999/xiangliandelall", {
+            .get("http://localhost:9999/ershidelall", {
               params: {
                 arrid: arrid //携带的参数（一个数组）
               }
@@ -251,12 +265,13 @@ export default {
                 message: "删除成功",
                 type: "success"
               });
-              if(this.tableData.length==this.sels.length){ //当选中的个数和列表个数相等时
-                    this.page=this.page-1  //进入上一页
+              if(this.tableData.length==this.sels.length){
+                    this.page=this.page-1
                     this.getNecklaceNum(this.page)
               }else{
-                this.getNecklaceNum(this.page) //留在本页
+                this.getNecklaceNum(this.page)
               }
+                  
             })
             .catch(function() {
               //请求失败
@@ -276,8 +291,9 @@ export default {
         })
           .then(() => {
             //弹框确定按钮触发
+            // console.log(row.id);
             this.$http //发起ajax请求
-              .get("http://localhost:9999/xiangliandel", {
+              .get("http://localhost:9999/ershidel", {
                 params: {
                   id: row.id //携带的参数（所选数据的id）
                 }
@@ -289,12 +305,15 @@ export default {
                   message: "删除成功",
                   type: "success"
                 });
-                if(this.tableData.length==1){ //列表只有一条数据时
-                  this.page=this.page-1  //删除后进入上一页
-                 this.getNecklaceNum(this.page)
+                
+                if(this.tableData.length==1){
+                  this.page=this.page-1
+                  this.getNecklaceNum(this.page)
                 }else{
                   this.getNecklaceNum(this.page)
                 }
+              //     console.log(index)
+              //   this.tableData.splice(index,1)
               })
               .catch(function() {
                 //请求失败
@@ -305,8 +324,13 @@ export default {
       }
     },
     handleCurrentChange(val) {
-      this.page = val; //val代表点击的页码
+      
+      //  this.getNecklaceNum(val)
+      this.page = val;
       this.send(val);
+     
+      
+      
     }
   }
 };

@@ -61,7 +61,7 @@
 						}
       }).then((result)=>{
       	
-        	console.log(result.data)
+        	// console.log(result.data)
         	if(!result.data){
         		this.exsit=true
         	}else{
@@ -94,7 +94,7 @@
 							}
 						]
 					}).then((result)=>{
-        	console.log(result)
+        	// console.log(result)
         	if(result.data==false){
         		this.mima2=true
         	}else{

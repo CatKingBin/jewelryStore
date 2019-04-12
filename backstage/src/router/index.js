@@ -5,6 +5,12 @@ import Reg from '@/components/Reg'
 import Product from '@/components/Product'
 import Index from '@/components/Index'
 import XiangLian from '@/components/XiangLian'
+import ErShi from '@/components/ErShi'
+import ShouShi from '@/components/ShouShi'
+import JieZhi from '@/components/JieZhi'
+
+
+
 
 
 Vue.use(Router)
@@ -16,7 +22,7 @@ export default new Router({
       name: 'Login',
       component: Login
     },
-     {
+    {
       path: '/reg',
       name: 'Reg',
       component: Reg
@@ -29,14 +35,28 @@ export default new Router({
         {
       	  path: '/product',
           name: 'Index',
-          component: Index,
-      },
-      {
-      	path: '/xianglian',
-        name: 'XiangLian',
-        component: XiangLian,
-      }
-     
+          component: Index
+        },
+        {
+      	  path: '/xianglian',
+          name: 'XiangLian',
+          component: XiangLian
+        },
+        {
+      	  path: '/ershi',
+          name: 'ErShi',
+          component: ErShi
+        },
+        {
+      	  path: '/shoushi',
+          name: 'ShouShi',
+          component: ShouShi
+        },
+        {
+      	  path: '/jiezhi',
+          name: 'JieZhi',
+          component: JieZhi
+        }
       ]
     }
   ]

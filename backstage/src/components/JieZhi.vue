@@ -76,7 +76,7 @@
 
 <script>
 export default {
-  name: "XiangLian",
+  name: "JieZhi",
   data() {
     return {
       total: 0,
@@ -120,13 +120,14 @@ export default {
     fond() {
       //查询触发函数
       this.$http //发起ajax请求
-        .get("http://localhost:9999/xianglianfond", {
+        .get("http://localhost:9999/jiezhifond", {
           params: {
             storename: this.storename //请求携带的参数
           }
         })
         .then(result => {
           //请求成功
+          //  console.log(result.data)
           this.storename = "";
           this.tableData = []; //清空数据列表
           for (var i = 0; i < result.data.length; i++) {
@@ -160,7 +161,7 @@ export default {
     submitForm(formName) {
       //新增提交触发函数，formName是提交的数据（一个对象）
       this.$http //发起ajax请求
-        .get("http://localhost:9999/xianglianadd", {
+        .get("http://localhost:9999/jiezhiadd", {
           params: {
             obj: formName //请求携带的参数
           }
@@ -182,7 +183,7 @@ export default {
     send(index) {
       //页面加载完时触发函数
       this.$http //发起ajax请求
-        .get("http://localhost:9999/xianglian", {
+        .get("http://localhost:9999/jiezhi", {
          params:{
              index:index
          } 
@@ -209,7 +210,7 @@ export default {
     getNecklaceNum(val){
       //页面加载完时触发函数
       this.$http //发起ajax请求
-        .get("http://localhost:9999/necklaceNum", {})
+        .get("http://localhost:9999/jiezhiNum", {})
         .then(result => {
           //请求成功
           this.total = result.data.length;
@@ -239,7 +240,7 @@ export default {
         .then(() => {
           //弹框"确定"按钮触发函数
           this.$http //发起ajax请求
-            .get("http://localhost:9999/xiangliandelall", {
+            .get("http://localhost:9999/jiezhidelall", {
               params: {
                 arrid: arrid //携带的参数（一个数组）
               }
@@ -251,11 +252,11 @@ export default {
                 message: "删除成功",
                 type: "success"
               });
-              if(this.tableData.length==this.sels.length){ //当选中的个数和列表个数相等时
-                    this.page=this.page-1  //进入上一页
+              if(this.tableData.length==this.sels.length){
+                    this.page=this.page-1
                     this.getNecklaceNum(this.page)
               }else{
-                this.getNecklaceNum(this.page) //留在本页
+                this.getNecklaceNum(this.page)
               }
             })
             .catch(function() {
@@ -277,7 +278,7 @@ export default {
           .then(() => {
             //弹框确定按钮触发
             this.$http //发起ajax请求
-              .get("http://localhost:9999/xiangliandel", {
+              .get("http://localhost:9999/jiezhidel", {
                 params: {
                   id: row.id //携带的参数（所选数据的id）
                 }
@@ -289,9 +290,9 @@ export default {
                   message: "删除成功",
                   type: "success"
                 });
-                if(this.tableData.length==1){ //列表只有一条数据时
-                  this.page=this.page-1  //删除后进入上一页
-                 this.getNecklaceNum(this.page)
+                if(this.tableData.length==1){
+                  this.page=this.page-1
+                  this.getNecklaceNum(this.page)
                 }else{
                   this.getNecklaceNum(this.page)
                 }
@@ -305,7 +306,7 @@ export default {
       }
     },
     handleCurrentChange(val) {
-      this.page = val; //val代表点击的页码
+      this.page = val;
       this.send(val);
     }
   }

@@ -1,15 +1,13 @@
 // 引入模块
 const dbutils = require('../utils/dbutils.js');
 
-function selectXiangLian(index,cb) {
-	// console.log(index)
+function selectShouShi(index,cb) {
 	dbutils.pool.getConnection(function(err, conn) {
 		if(err) { //连接失败
 			console.log(err)
 		} else { //连接成功,conn是连接对象
-			let sql = "select * from xianglian limit ?,?";
+			let sql = "select * from shoushi limit ?,?";
 			conn.query(sql,[(index-1)*7,7],function(err1, results) {
-                // console.log(results)
 				cb(results);
 				//释放连接池
 				conn.release();
@@ -18,14 +16,13 @@ function selectXiangLian(index,cb) {
 	});
 }
 
-function getNecklaceNum(cb) {
+function shoushiNum(cb) {
 	dbutils.pool.getConnection(function(err, conn) {
 		if(err) { //连接失败
 			console.log(err)
 		} else { //连接成功,conn是连接对象
-			let sql = "select * from xianglian";
+			let sql = "select * from shoushi";
 			conn.query(sql,function(err1, results) {
-         	// console.log(results)
 				cb(results);
 				//释放连接池
 				conn.release();
@@ -35,14 +32,13 @@ function getNecklaceNum(cb) {
 }
 
 
-function delXiangLian(id,cb) {
+function delShouShi(id,cb) {
 	dbutils.pool.getConnection(function(err, conn) {
 		if(err) { //连接失败
 			console.log(err)
 		} else { //连接成功,conn是连接对象
-			let sql = "delete from xianglian where id=?";
+			let sql = "delete from shoushi where id=?";
 			conn.query(sql,[id],function(err1, results) {
-//          	console.log(results)
 				cb(results);
 				//释放连接池
 				conn.release();
@@ -51,15 +47,13 @@ function delXiangLian(id,cb) {
 	});
 }
 
-function delXiangLianall(arrid,cb) {
+function delShouShiall(arrid,cb) {
 	dbutils.pool.getConnection(function(err, conn) {
 
 		if(err) { //连接失败
 			console.log(err)
 		} else { //连接成功,conn是连接对象
-			
-			// console.log(arrid.join(","))
-			let sql = "delete from xianglian where id in ("+arrid.join(",")+")";
+			let sql = "delete from shoushi where id in ("+arrid.join(",")+")";
 			conn.query(sql,function(err1, results) {
 				cb(results);
 			})
@@ -69,15 +63,12 @@ function delXiangLianall(arrid,cb) {
 	});
 }
 
-function addXiangLian(objs,cb) {
+function addShouShi(objs,cb) {
 	dbutils.pool.getConnection(function(err, conn) {
-
 		if(err) { //连接失败
 			console.log(err)
 		} else { //连接成功,conn是连接对象
-			
-			// console.log(objs.src)
-			let sql = "insert into xianglian (img,title,price,inventory) values(?,?,?,?) ";
+			let sql = "insert into shoushi (img,title,price,inventory) values(?,?,?,?) ";
 			conn.query(sql,[objs.src,objs.title,objs.price,objs.number],function(err1, results) {
 				cb(results);
 			})
@@ -87,14 +78,13 @@ function addXiangLian(objs,cb) {
 	});
 }
 
-function fondXiangLian(storename,cb) {
+function fondShouShi(storename,cb) {
 	dbutils.pool.getConnection(function(err, conn) {
 		if(err) { //连接失败
 			console.log(err)
 		} else { //连接成功,conn是连接对象
-			let sql = `select * from xianglian where title like "%${storename}%"` ;
+			let sql = `select * from shoushi where title like "%${storename}%"` ;
 			conn.query(sql,function(err1, results) {
-				// console.log(results)
 				cb(results);
 			})
 			//释放连接池
@@ -103,12 +93,12 @@ function fondXiangLian(storename,cb) {
 	});
 }
 
-exports.selectXiangLian = selectXiangLian;
-exports.delXiangLian = delXiangLian;
-exports.delXiangLianall = delXiangLianall;
-exports.addXiangLian = addXiangLian;
-exports.fondXiangLian = fondXiangLian;
-exports.getNecklaceNum = getNecklaceNum;
+exports.selectShouShi = selectShouShi;
+exports.delShouShi = delShouShi;
+exports.delShouShiall = delShouShiall;
+exports.addShouShi = addShouShi;
+exports.fondShouShi = fondShouShi;
+exports.shoushiNum = shoushiNum;
 
 
 
