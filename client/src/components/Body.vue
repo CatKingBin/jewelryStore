@@ -35,6 +35,10 @@ export default {
   height: 1023px;
   margin-left: -250px;
 }
+.top img{
+  height: 1023px;
+  margin-left: -250px;
+}
 .top1 {
   width: 100%;
   height: 1282px;

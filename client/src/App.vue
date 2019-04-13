@@ -7,7 +7,7 @@
       <el-main>
         <router-view></router-view>  
       </el-main>
-      <el-footer height="73px">
+      <el-footer height="100px">
          <my-foot></my-foot>
       </el-footer>
     </el-container>
