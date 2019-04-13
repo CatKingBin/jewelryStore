@@ -24,10 +24,10 @@
   </view>
 
   <!-- 商品区 -->
-  <view wx:if="{{pro}}" class='product-view'>
-    <view class='product-one' wx:for="{{products}}">
+  <view wx:if="{{pro}}" class='product-view' >
+    <view class='product-one' wx:for="{{products}}" data-id='{{index}}' bindtap='jumpxiang'>
       <view class='product-pic-view'>
-        <image src='{{item.imgsrc}}'></image>
+        <image src='{{item.img}}'></image>
       </view>
       <view class='product-text-view'>
         <view class='product-text-title'>
@@ -36,7 +36,7 @@
         <view class='product-price-view'>
           <text class='product-price-logo'>￥</text>
           <text class='product-price-number'>{{item.price}}</text>
-          <text class='product-price-pay'>{{item.pay}}人付款</text>
+          <text class='product-price-pay'>{{item.sold}}人付款</text>
         </view>
       </view>
     </view>
@@ -45,7 +45,7 @@
   <view wx:else class='prod'>
     <view class='prod-view' wx:for="{{products}}">
       <view class='prod-view-img'>
-        <image src='{{item.imgsrc}}'></image>
+        <image src='{{item.img}}'></image>
       </view>
       <view class='prod-view-text'>
         <view class='prod-text-title'>
@@ -55,7 +55,7 @@
         <view class='prod-price-view'>
           <text class='product-price-logo'>￥</text>
           <text class='product-price-number'>{{item.price}}</text>
-          <text class='product-price-pay'>{{item.pay}}人付款</text>
+          <text class='product-price-pay'>{{item.sold}}人付款</text>
         </view>
       </view>
     </view>

@@ -5,7 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    username:"",
+    password:"",
+    jumpdata:false
   },
   //注册
   formSubmit: function(e) {
@@ -18,30 +20,100 @@ Page({
     if ("" == account) {　　
       console.log("账号不能为空")　　
       return;　　
-    } else { //账号不为空
-
-    }
-    // 判断密码是否为空　
-    if ("" == password) {
+    } else if ("" == password) {
       console.log("密码不能为空")
       return;
-    } else {
-      
-    }　 
-    // 两个密码必须一致
-    if (subPassword != password) {
+    } else if (subPassword != password) {
 
       console.log("输入密码不一致");　　
       return;　　
-    } else {　}
-  },
+    } else {　
 
+      that.setData({
+        username: account,
+        password: password
+      })
+      that.req(function (data) {
+        console.log(data)//TRUE
+        if(data){
+          wx.navigateTo({
+            url: '../login/login?name=' + that.data.username + "&pwd="
+              + that.data.password,})
+          // that.setData({
+          //   jumpdata:true
+          // })
+        }else{
+
+        }
+      })
+
+    }
+
+  },
+  // //跳登录页面
+  // jump: function () {
+  //   if(this.data.jumpdata){
+  //     wx.navigateTo({
+  //       url: '../login/login?name=' + this.data.username +"&pwd="
+  //       + this.data.password,
+  //       success: function (res) {
+
+  //       },
+  //       fail: function (res) {
+
+  //       },
+  //       complete: function (res) {
+
+  //       },
+  //     })
+  //   }
+   
+  // },
+  //跳登录页面
+  jumplogin: function () {
+    
+      wx.navigateTo({
+        url: '../login/login',
+        success: function (res) {
+
+        },
+        fail: function (res) {
+
+        },
+        complete: function (res) {
+
+        },
+      })
+
+
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+  //  console.log(666)
   },
+  req(call) {
+    wx.request({
+      url: "http://localhost:9999/userreg.do",
+      data: {
+        name: this.data.username,
+        pwd: this.data.password
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+},
+      method: 'POST',
+      dataType: 'json',
+      responseType: 'text',
+      success: function (res) {
+        call(res.data)
+      },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
+  },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成

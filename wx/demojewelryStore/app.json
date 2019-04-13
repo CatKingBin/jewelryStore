@@ -1,13 +1,16 @@
 {
   "pages": [
-  
-    "pages/activity/activity",
-    "pages/product/product",
-    "pages/index/index",
-    "pages/classify/classify",
-    "pages/service/service",
+      "pages/index/index",
+    "pages/baobei/baobei",
     "pages/login/login",
-    "pages/reg/reg"
+   "pages/product/product",
+    "pages/activity/activity",
+    "pages/reg/reg",
+     
+    "pages/classify/classify",
+    "pages/service/service"
+    
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -40,9 +43,9 @@
       },
       {
         "pagePath": "pages/classify/classify",
-        "text": "宝贝分类",
-        "iconPath": "img/d.png",
-        "selectedIconPath": "img/dd.png"
+        "text": "个人中心",
+        "iconPath": "img/g.png",
+        "selectedIconPath": "img/gg.png"
       },
       {
         "pagePath": "pages/service/service",

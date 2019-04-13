@@ -180,8 +180,7 @@ app.get("/*",function(req,res){
 		shoushiController.shoushiadd(req,res)
 	}else if(urlPath=="/shoushifond"){  //查询商品
 		shoushiController.shoushifond(req,res)
-	}else 
-	if(urlPath=="/jiezhi"){  //戒指列表
+	}else if(urlPath=="/jiezhi"){  //戒指列表
 		jiezhiController.jiezhi(req,res)
 	}else if(urlPath=="/jiezhiNum"){ //获取商品总数量
 		jiezhiController.jiezhiNum(req,res)

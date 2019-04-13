@@ -16,7 +16,7 @@ subPassword ：确认密码 -->
             <view class="weui-label">账号:</view>
           </view>
           <view class="weui-cell__bd">
-            <input class="weui-input" placeholder="请输入账号" type="text" maxlength="20" value="{{account}}" focus="true" name="account" />
+            <input class="weui-input" placeholder="请输入账号" type="text" maxlength="20" value="{{name}}" focus="true" name="name" />
           </view>
         </view>
         <view class="weui-cell weui-cell_input">
@@ -24,12 +24,12 @@ subPassword ：确认密码 -->
             <view class="weui-label">密码:</view>
           </view>
           <view class="weui-cell__bd">
-            <input class="weui-input" placeholder="请输入密码" type="password" maxlength="10" value="{{password}}" name="password" />
+            <input class="weui-input" placeholder="请输入密码" type="password" maxlength="10" value="{{pwd}}" name="pwd" />
           </view>
         </view>
         
         <view class="weui-btn-area">
-          <button class="weui-btn" type="primary" formType="submit">登录</button>
+          <button class="weui-btn" type="primary" formType="submit" bindtap='jump'>登录</button>
         </view>
       </view>
     </view>
