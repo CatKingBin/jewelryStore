@@ -24,7 +24,6 @@ export default {
 }
 .contain {
    width: 100%;
-   /* opacity: 0.3; */
    background-color: rgb(29, 21, 21,0.6);
 }
 .lunbo {
@@ -40,7 +39,7 @@ export default {
 }
 
 .el-carousel__item:nth-child(4n + 1) {
-  background-image: url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2575492598,1457568269&fm=15&gp=0.jpg);
+  background-image: url(http://img0.imgtn.bdimg.com/it/u=3411804117,3716124559&fm=26&gp=0.jpg);
 }
 .el-carousel__item:nth-child(4n + 2) {
   background-color: rgb(220, 245, 242);

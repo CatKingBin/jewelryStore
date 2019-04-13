@@ -2,11 +2,12 @@
   <div class="contain">
     <div class="box"></div>
     <div class="buzou">
-       <el-steps :active="1">
-           <el-step title="" ></el-step>
-           <el-step title="实拍真图" icon="el-icon-upload"></el-step>
-           <el-step title="" ></el-step>
+       <el-steps :active="1" align-center>
+           <el-step title="" icon="el-icon-star-off"></el-step>
+           <el-step title="" icon="el-icon-goods"></el-step>
+           <el-step title="" icon="el-icon-star-off" ></el-step>
        </el-steps>
+       <h3>优选款式/实物拍摄</h3>
     </div>
     <div class="center">
       <div class="center-left">
@@ -41,7 +42,13 @@ export default {
   background-image: url(http://img4.ido-love.com/art/pc/151317231047514220.png);
 }
 .buzou {
-    margin: 20px 0px;
+    margin: 50px 0px;
+}
+.buzou>h3 {
+  color: orangered;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 30px;
 }
 .center {
   width: 90%;
