@@ -85,7 +85,8 @@
 					verticalAlign: "middle"
 				},
 				aside:{
-					width:"250px"
+					width:"250px",
+
 				},
 				tac:{
 					marginTop:"20px"
@@ -133,6 +134,11 @@
 		background-color: #20A0FF;
 		color: #333;
 		text-align: center;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 10;
 	}
 	
 	.el-header>div:first-child {
@@ -143,6 +149,10 @@
 		background-color: #D3DCE6;
 		color: #333;
 		text-align: center;
+		position: fixed;
+		top: 60px;
+		left: 0;
+		z-index: 1;
 		height: 565px;
 	}
 	
@@ -150,5 +160,7 @@
 		background-color: #E9EEF3;
 		color: #333;
 		text-align: center;
+		margin-left: 250px;
+		margin-top: 60px;
 	}
 </style>

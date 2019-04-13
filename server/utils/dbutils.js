@@ -5,7 +5,7 @@ const pool = mysql.createPool({
     port: 3306,
     user: 'root',
     password: 'root',
-    database: 'jewelrystore'
+    database: 'MySQLs'
 });
 // 导出模块
 exports.pool=pool;

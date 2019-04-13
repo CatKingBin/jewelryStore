@@ -121,8 +121,10 @@ export default {
    
     fond() {
       //查询触发函数
-      // console.log(this.storename);
-      this.$http //发起ajax请求
+      if(this.storename == ""){
+      this.getNecklaceNum(this.page)
+      }else{
+ this.$http //发起ajax请求
         .get("http://localhost:9999/ershifond", {
           params: {
             storename: this.storename //请求携带的参数
@@ -130,8 +132,8 @@ export default {
         })
         .then(result => {
           //请求成功
-          //  console.log(result.data)
           this.storename = "";
+          this.total=7;
           this.tableData = []; //清空数据列表
           for (var i = 0; i < result.data.length; i++) {
             //使用循环插入请求得到的数据
@@ -148,6 +150,8 @@ export default {
           //请求失败
           alert("查找失败");
         });
+      }
+     
     },
     handleAdd() {
       //新增按钮触发函数
