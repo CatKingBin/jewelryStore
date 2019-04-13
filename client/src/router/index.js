@@ -3,6 +3,9 @@ import Router from 'vue-router'
 
 import Body from '@/components/Body'
 import Xianglian from '@/components/Xianglian'
+import Ershi from '@/components/Ershi'
+import Shoushi from '@/components/Shoushi'
+import Jiezhi from '@/components/Jiezhi'
 import Login from '@/components/Login'
 import Reg from '@/components/Reg'
 
@@ -33,6 +36,21 @@ export default new Router({
 			path: '/xianglian',
 			name: 'Xianglian',
 			component: Xianglian
+		},
+		{
+			path: '/ershi',
+			name: 'Ershi',
+			component: Ershi
+		},
+		{
+			path: '/Shoushi',
+			name: 'Shoushi',
+			component: Shoushi
+		},
+		{
+			path: '/jiezhi',
+			name: 'Jiezhi',
+			component: Jiezhi
 		}
   ]
 })

@@ -180,7 +180,7 @@ span {
 	text-decoration: none;
 }
 .login1 {
-  margin-left: 110px;
+  margin-left: 90px;
 }
 .login1 > u {
   color: red;
