@@ -1,7 +1,7 @@
 <template>
     <div class="contain">
          <div class="bottom">
-             <p>版权所有 Copyright © 2007-2018 iFashion all rights reserved Powered by iFashion. 粤ICP备07502554号-1 站长统计</p>
+             <p>版权所有 Copyright © 2007-2018 iFashion all rights reserved Powered by iFashion. 粤ICP备07502554号-1 </p>
          </div>
     </div>
 </template>
