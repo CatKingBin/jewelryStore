@@ -43,7 +43,7 @@ export default {
   background-image: url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2575492598,1457568269&fm=15&gp=0.jpg);
 }
 .el-carousel__item:nth-child(4n + 2) {
-  background-color: lightsteelblue;
+  background-color: rgb(220, 245, 242);
   background-image: url(http://img4.ido-love.com/art/pc/151334059046823088.png);
 }
 .el-carousel__item:nth-child(4n + 3) {
