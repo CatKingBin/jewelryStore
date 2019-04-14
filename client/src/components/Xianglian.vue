@@ -7,14 +7,62 @@
         </el-carousel>
       </div>
     </div>
-    <div class="lunbo1"></div>
+    <div id="shuju">
+      <ul class="ul-flex">
+				<li v-for="(item) in arr" :key="item" class="list" @click="jump(item)">
+          <div class="list-img"><img :src="item.img" alt=""></div>
+          <div class="list-word">{{item.title}}</div>
+          <div class="list-price">
+            <p >￥：{{item.price}}</p>
+            <span class="price">已售：{{item.sold}}件</span>
+          </div>
+        </li>
+			</ul>
+      
+    </div>
   </div>
 </template>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
 
 <script>
 export default {
-  name: "Xianglian"
-};
+  name: "Xianglian",
+  data(){
+    return {
+        arr:[]
+    } 
+  },
+  mounted() {
+    // 让send和resetForm函数在页面加载完后就执行
+    this.send();
+  },
+  methods:{
+    jump: function(item) {
+      console.log(item)
+      this.$router.push({path: "/jump", query: {obj:JSON.stringify(item)}});
+			},
+    send() {
+      //页面加载完时触发函数
+      this.$http //发起ajax请求
+        .get("http://localhost:9999/necklaceNum", {
+         params:{
+             
+         } 
+        })
+        .then(result => {
+          //请求成功
+        console.log(result.data)
+        
+        this.arr=result.data
+        })
+        .catch(function() {
+          //请求失败
+          alert("失败");
+        });
+    },
+
+  }
+}
 </script>
 
 <style scoped="scoped">
@@ -24,7 +72,7 @@ export default {
 }
 .contain {
    width: 100%;
-   background-color: rgb(29, 21, 21,0.6);
+   background-color: rgba(46, 42, 42, 0.836);
 }
 .lunbo {
   width: 80%;
@@ -48,9 +96,52 @@ export default {
 .el-carousel__item:nth-child(4n + 3) {
   background-image: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555745936&di=7a81afb95b021a9a8faa71bcf104bec4&imgtype=jpg&er=1&src=http%3A%2F%2Fimg.alicdn.com%2Fimgextra%2Fi4%2F683623708%2FTB2hajwlVXXXXaOXpXXXXXXXXXX_%21%21683623708.jpg);
 }
-.lunbo1 {
+#shuju {
   width: 100%;
-  height: 500px;
-  background-color: pink;
+  height: 1880px;
+  background-color: rgba(248, 248, 248, 0.973);
+}
+.ul-flex {
+  width: 90%;
+  height: 350px;
+  margin: 0px auto;
+  padding: 20px 0px;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.list {
+  width: 23%;
+  height: 100%;
+  margin: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  list-style: none;
+  /* background-color: aqua; */
+}
+.list-img {
+   width: 100%;
+   height: 72%;
+   background-color: pink;
+}
+.list-img>img {
+  width: 100%;
+  height: 100%;
+}
+.list-word {
+  width: 100%;
+  height: 13%;
+  background-color: yellow;
+}
+.list-price {
+  width: 100%;
+  height: 10%;
+  /* background-color: orange; */
+  display: flex;
+  /* justify-content: space-around; */
+}
+.price {
+  padding-left: 35%;
 }
 </style>

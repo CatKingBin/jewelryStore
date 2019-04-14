@@ -6,6 +6,7 @@ import Xianglian from '@/components/Xianglian'
 import Ershi from '@/components/Ershi'
 import Shoushi from '@/components/Shoushi'
 import Jiezhi from '@/components/Jiezhi'
+import jump from '@/components/jump'
 import Login from '@/components/Login'
 import Reg from '@/components/Reg'
 
@@ -51,6 +52,11 @@ export default new Router({
 			path: '/jiezhi',
 			name: 'Jiezhi',
 			component: Jiezhi
+		},
+		{
+			path: '/jump',
+			name: 'jump',
+			component: jump
 		}
   ]
 })
