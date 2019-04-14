@@ -13,6 +13,11 @@ function jiezhiNum(req, res){
         res.send(results)
     })
 }
+function wxshuju(req, res){
+    jiezhiService.wxshuju(function(results) {
+        res.send(results)
+    })
+}
 function jiezhidel(req, res){
     let id=req.query.id
     jiezhiService.jiezhidel(id,function(results) {
@@ -44,4 +49,6 @@ function jiezhifond(req, res){
   exports.jiezhidelall=jiezhidelall;
   exports.jiezhiadd=jiezhiadd;
   exports.jiezhifond=jiezhifond;
+  exports.wxshuju=wxshuju;
+
 

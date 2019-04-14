@@ -31,6 +31,20 @@ function jiezhiNum(cb) {
 	});
 }
 
+function wxshuju(cb) {
+	dbutils.pool.getConnection(function(err, conn) {
+		if(err) { //连接失败
+			console.log(err)
+		} else { //连接成功,conn是连接对象
+			let sql = "select * from xianglian union all select * from ershi union all select * from shoushi union all select * from jiezhi";
+			conn.query(sql,function(err1, results) {
+				cb(results);
+				//释放连接池
+				conn.release();
+			})
+		}
+	});
+}
 
 function delJieZhi(id,cb) {
 	dbutils.pool.getConnection(function(err, conn) {
@@ -99,6 +113,8 @@ exports.delJieZhiall = delJieZhiall;
 exports.addJieZhi = addJieZhi;
 exports.fondJieZhi = fondJieZhi;
 exports.jiezhiNum = jiezhiNum;
+exports.wxshuju = wxshuju;
+
 
 
 

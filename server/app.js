@@ -193,6 +193,8 @@ app.get("/*",function(req,res){
 		jiezhiController.jiezhiadd(req,res)
 	}else if(urlPath=="/jiezhifond"){  //查询商品
 		jiezhiController.jiezhifond(req,res)
+	}else if(urlPath=="/wxshuju"){  //查询商品
+		jiezhiController.wxshuju(req,res)
 	}
 })
 
