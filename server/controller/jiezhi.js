@@ -18,6 +18,12 @@ function wxshuju(req, res){
         res.send(results)
     })
 }
+function findall(req, res){
+    let storename=req.query.storename
+    jiezhiService.findall(storename,function(results) {
+        res.send(results)
+    })
+}
 function jiezhidel(req, res){
     let id=req.query.id
     jiezhiService.jiezhidel(id,function(results) {
@@ -50,5 +56,7 @@ function jiezhifond(req, res){
   exports.jiezhiadd=jiezhiadd;
   exports.jiezhifond=jiezhifond;
   exports.wxshuju=wxshuju;
+  exports.findall=findall;
+
 
 

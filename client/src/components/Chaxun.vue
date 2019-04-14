@@ -1,50 +1,44 @@
 <template>
-  <div class="container">
-    <div class="top">
-      <div class="topimg1"></div>
-      <div class="topimg2"></div>
-      <div class="topimg3"></div>
-    </div>
+  <div class="bigbox">
     <div id="shuju">
       <ul class="ul-flex">
-        <li v-for="(item) in arr" :key="item.id" class="list" @click="jump(item)">
-          <div class="list-img">
-            <img :src="item.img" alt>
-          </div>
+				<li v-for="(item,index) in arr" :key="index" class="list" @click="jump(item)">
+          <div class="list-img"><img :src="item.img" alt=""></div>
           <div class="list-word">{{item.title}}</div>
           <div class="list-price">
-            <p>￥<span class="money">{{item.price}}</span></p>
+            <p >￥<span class="money">{{item.price}}</span></p>
             <span class="price">已售：{{item.sold}}件</span>
           </div>
         </li>
-      </ul>
+			</ul> 
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Ershi",
-   data(){
+  name: "Xianglian",
+  data(){
     return {
-        arr:[]
+        arr:''
     } 
   },
   mounted() {
     // 让send和resetForm函数在页面加载完后就执行
-    this.send();
+    // console.log(this.$route.query.storename)
+    this.send(this.$route.query.storename);
   },
   methods:{
     jump: function(item) {
       console.log(item)
-      this.$router.push({path: "/jump", query: {obj:JSON.stringify(item)}});
+      this.$router.push({path: "/jump", query: {img:item.img,title:item.title,price:item.price,sold:item.sold}});
 			},
-    send() {
+    send(storename) {
       //页面加载完时触发函数
       this.$http //发起ajax请求
-        .get("http://localhost:9999/ershiNum", {
+        .get("http://localhost:9999/findall", {
          params:{
-             
+             storename:storename
          } 
         })
         .then(result => {
@@ -52,6 +46,7 @@ export default {
         console.log(result.data)
         
         this.arr=result.data
+        // console.log(this.arr)
         })
         .catch(function() {
           //请求失败
@@ -60,58 +55,35 @@ export default {
     },
 
   }
-};
+}
 </script>
 
 <style scoped="scoped">
-.container {
+.bigbox {
   width: 100%;
-}
-.top {
-  width: 100%;
-  height: 300px;
-  background-position: center;
-  position: relative;
   margin-top: 72px;
-  margin-bottom: 180px;
-  opacity: 0.7;
-  background-size: contain;
-  background-image: url(http://img4.imgtn.bdimg.com/it/u=2496227324,3461031432&fm=26&gp=0.jpg);
 }
-.topimg1 {
-  width: 200px;
-  height: 200px;
-  position: absolute;
+.el-carousel__item {
   background-position: center;
   background-size: cover;
-  top: 65%;
-  left: 25%;
-  z-index: 99;
-  background-image: url(http://img0.imgtn.bdimg.com/it/u=541665049,679696133&fm=26&gp=0.jpg);
 }
-.topimg2 {
-  width: 250px;
-  height: 250px;
-  position: absolute;
-  background-position: center;
-  background-size: cover;
-  top: 20%;
-  left: 38%;
-  background-image: url(http://img0.imgtn.bdimg.com/it/u=2736817597,1922491119&fm=26&gp=0.jpg);
+.el-carousel__item:nth-child(4n) {
+  background-image: url(https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2874166175,1318701774&fm=15&gp=0.jpg);
 }
-.topimg3 {
-  width: 200px;
-  height: 200px;
-  position: absolute;
-  background-position: center;
-  background-size: cover;
-  top: 65%;
-  left: 55%;
-  background-image: url(http://img5.imgtn.bdimg.com/it/u=3386306103,3030630408&fm=26&gp=0.jpg);
+
+.el-carousel__item:nth-child(4n + 1) {
+  background-image: url(http://img0.imgtn.bdimg.com/it/u=3411804117,3716124559&fm=26&gp=0.jpg);
+}
+.el-carousel__item:nth-child(4n + 2) {
+  background-color: rgb(220, 245, 242);
+  background-image: url(http://img4.ido-love.com/art/pc/151334059046823088.png);
+}
+.el-carousel__item:nth-child(4n + 3) {
+  background-image: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555745936&di=7a81afb95b021a9a8faa71bcf104bec4&imgtype=jpg&er=1&src=http%3A%2F%2Fimg.alicdn.com%2Fimgextra%2Fi4%2F683623708%2FTB2hajwlVXXXXaOXpXXXXXXXXXX_%21%21683623708.jpg);
 }
 #shuju {
   width: 100%;
-  height: 2240px;
+  /* height: 2240px; */
   background-color: rgba(248, 248, 248, 0.973);
 }
 .ul-flex {

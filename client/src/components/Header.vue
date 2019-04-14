@@ -1,5 +1,5 @@
 <template>
-  <div class="outer">
+  <div class="outer" style="position:relative">
     <div class="container">
       <ul>
         <li class="list">
@@ -20,6 +20,21 @@
       </ul>
     </div>
     <div class="logo"><i>今生今饰</i></div>
+
+    <div class="sousuo">
+      <el-col :span="24" style="padding-bottom: 0px;">
+        <el-form :inline="true">
+          <el-form-item>
+            <el-input placeholder="请输入关键字" v-model="storename"></el-input>
+          </el-form-item>
+          <el-form-item>
+            <el-button type="primary" @click="find">查询</el-button>
+          </el-form-item>
+        </el-form>
+      </el-col>
+    </div>
+
+
     <div class="login-car"> 
       <router-link to="login">
         <img class="imglogin" src="https://i.loli.net/2019/04/11/5caee84d99b69.png" alt>
@@ -33,7 +48,17 @@
 
 <script>
 export default {
-  name: "HelloWorld"
+  name: "HelloWorld",
+  data(){
+    return{
+      storename:""
+    }
+  },
+  methods: {
+    find(){
+      this.$router.push({path:'chaxun',query:{storename:this.storename}})
+    }
+  }
 };
 </script>
 
@@ -109,5 +134,10 @@ li {
   width: 38px;
   height: 38px;
   display: inline-block;
+}
+.sousuo{
+  position:absolute;
+  top: 10px;
+  right: 180px;
 }
 </style>

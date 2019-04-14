@@ -46,6 +46,22 @@ function wxshuju(cb) {
 	});
 }
 
+function findall(storename,cb) {
+	dbutils.pool.getConnection(function(err, conn) {
+		if(err) { //连接失败
+			console.log(err)
+		} else { //连接成功,conn是连接对象
+			let sql = `select * from xianglian where title like '%${storename}%' union all select * from ershi where title like '%${storename}%' union all select * from shoushi where title like '%${storename}%' union all select * from jiezhi where title like '%${storename}%'`;
+			conn.query(sql,function(err1, results) {
+				cb(results);
+				
+				//释放连接池
+				conn.release();
+			})
+		}
+	});
+}
+
 function delJieZhi(id,cb) {
 	dbutils.pool.getConnection(function(err, conn) {
 		if(err) { //连接失败
@@ -114,6 +130,8 @@ exports.addJieZhi = addJieZhi;
 exports.fondJieZhi = fondJieZhi;
 exports.jiezhiNum = jiezhiNum;
 exports.wxshuju = wxshuju;
+exports.findall = findall;
+
 
 
 

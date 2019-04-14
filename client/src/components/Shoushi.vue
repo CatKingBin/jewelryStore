@@ -8,7 +8,7 @@
     </div>
     <div id="shuju">
       <ul class="ul-flex">
-        <li v-for="(item) in arr" :key="item" class="list" @click="jump(item)">
+        <li v-for="(item) in arr" :key="item.id" class="list" @click="jump(item)">
           <div class="list-img">
             <img :src="item.img" alt>
           </div>

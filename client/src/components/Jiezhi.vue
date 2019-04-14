@@ -12,7 +12,7 @@
     <div class="center">
       <div class="center-left">
         <el-carousel height="500px">
-          <el-carousel-item v-for="item in 4" :key="item"></el-carousel-item>
+          <el-carousel-item v-for="item in 4" :key="item.id"></el-carousel-item>
         </el-carousel>
       </div>
       <div class="title-flex">
