@@ -9,7 +9,7 @@
     </div>
     <div id="shuju">
       <ul class="ul-flex">
-				<li v-for="(item) in arr" :key="item" class="list" @click="jump(item)">
+				<li v-for="item in arr" :key="item.id" class="list" @click="jump(item)">
           <div class="list-img"><img :src="item.img" alt=""></div>
           <div class="list-word">{{item.title}}</div>
           <div class="list-price">
@@ -27,7 +27,7 @@ export default {
   name: "Xianglian",
   data(){
     return {
-        arr:[]
+        arr:''
     } 
   },
   mounted() {
@@ -37,7 +37,7 @@ export default {
   methods:{
     jump: function(item) {
       console.log(item)
-      this.$router.push({path: "/jump", query: {obj:JSON.stringify(item)}});
+      this.$router.push({path: "/jump", query: {img:item.img,title:item.title,price:item.price,sold:item.sold}});
 			},
     send() {
       //页面加载完时触发函数
@@ -52,6 +52,7 @@ export default {
         console.log(result.data)
         
         this.arr=result.data
+        console.log(this.arr)
         })
         .catch(function() {
           //请求失败
