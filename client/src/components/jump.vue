@@ -1,6 +1,9 @@
 <template>
     <div class="box">
-        <h1>{{this.$route.query.obj}}</h1>
+        <h1>{{this.$route.query.img}}</h1>
+        <h1>{{this.$route.query.title}}</h1>
+        <h1>{{this.$route.query.price}}</h1>
+        <h1>{{this.$route.query.sold}}</h1>
     </div>
 </template>
 
@@ -14,6 +17,6 @@ export default {
 .box {
     margin-top: 72px;
     width: 100%;
-    height: 50px;
+    
 }
 </style>
