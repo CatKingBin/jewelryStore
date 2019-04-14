@@ -192,8 +192,10 @@ app.get("/*",function(req,res){
 		jiezhiController.jiezhiadd(req,res)
 	}else if(urlPath=="/jiezhifond"){  //查询商品
 		jiezhiController.jiezhifond(req,res)
-	}else if(urlPath=="/wxshuju"){  //查询所有数据
+	}else if(urlPath=="/wxshuju"){  //微信查询所有数据
 		jiezhiController.wxshuju(req,res)
+	}else if(urlPath=="/findall"){  //pc端查询所有数据
+		jiezhiController.findall(req,res)
 	}
 })
 

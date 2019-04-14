@@ -2,7 +2,7 @@
   <div id="app">
     <el-container>
       <el-header height="72px" position="fixed">
-        <my-hello></my-hello>
+        <my-header></my-header>
       </el-header>
       <el-main>
         <router-view></router-view>  
@@ -15,12 +15,12 @@
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
+import Header from "./components/Header";
 import Foot from "./components/Foot";
 export default {
   name: "App",
   components: {
-    "my-hello": HelloWorld,
+    "my-header": Header,
     "my-foot": Foot
   }
 };

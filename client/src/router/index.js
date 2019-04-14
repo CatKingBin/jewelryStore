@@ -9,6 +9,8 @@ import Jiezhi from '@/components/Jiezhi'
 import jump from '@/components/jump'
 import Login from '@/components/Login'
 import Reg from '@/components/Reg'
+import Chaxun from '@/components/Chaxun'
+
 
 
 Vue.use(Router)
@@ -57,6 +59,11 @@ export default new Router({
 			path: '/jump',
 			name: 'jump',
 			component: jump
+		},
+		{
+			path: '/chaxun',
+			name: 'Chaxun',
+			component: Chaxun
 		}
   ]
 })

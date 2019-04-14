@@ -25,6 +25,14 @@ function jiezhi(index,cb) {
            
         });
 }
+function findall(storename,cb){
+        jiezhiDb.findall(storename,function(results) { 
+                    // 返回数据成功
+        //          console.log(results)
+                    cb(results);
+                
+             });
+}
  function jiezhidel(id,cb) { 
 	
     jiezhiDb.delJieZhi(id, function(results) { 
@@ -68,6 +76,8 @@ function jiezhi(index,cb) {
   exports.jiezhifond=jiezhifond;
   exports.jiezhiNum=jiezhiNum;
   exports.wxshuju=wxshuju;
+  exports.findall=findall;
+
 
 
 
