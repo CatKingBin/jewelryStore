@@ -36,8 +36,9 @@ subPassword ：确认密码 -->
           </view>
         </view>
         <view class="weui-btn-area">
-          <button class="weui-btn" type="primary" formType="submit">注册</button>
+          <button class="weui-btn" type="primary" formType="submit" >注册</button>
         </view>
+        <view bindtap='jumplogin'>已有账号 直接登录</view>
       </view>
     </view>
   </form>

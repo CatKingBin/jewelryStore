@@ -1,6 +1,6 @@
 <template>
   <div class="contain">
-    <div class="top"></div>
+    <div class="top"><a href="#"><img src="https://gdp.alicdn.com/imgextra/i1/367859690/O1CN01gfxr0g2LS4Nb7c8RZ_!!367859690.jpg" alt=""></a></div>
     <div class="top1"></div>
     <div class="top2"></div>
     <div class="top3"></div>
@@ -23,13 +23,17 @@ export default {
 .contain {
   width: 100%;
 }
-.top {
+/* .top {
   width: 100%;
   height: 1023px;
   margin-bottom: 20px;
   background-position: center;
   background-size: cover;
   background-image: url(https://gdp.alicdn.com/imgextra/i1/367859690/O1CN01gfxr0g2LS4Nb7c8RZ_!!367859690.jpg);
+} */
+.top img{
+  height: 1023px;
+  margin-left: -250px;
 }
 .top img{
   height: 1023px;

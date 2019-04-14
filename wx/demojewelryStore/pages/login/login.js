@@ -5,37 +5,100 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    src_list:null,
+    name: "a",
+    pwd: "a",
+    jumpdata: false
   },
   //登陆
   formSubmit: function (e) {
-    var account = e.detail.value.account; //账号
-    var password = e.detail.value.password; //密码
+    var name = e.detail.value.name; //账号
+    var pwd = e.detail.value.pwd; //密码
     
     var that = this;
-    console.log(password );
+    // console.log(password );
     //判断账号是否为空
-    if ("" == account) {
+    if ("" == name) {
       console.log("账号不能为空")
       return;
-    } else { //账号不为空
-
-    }
-    // 判断密码是否为空　
-    if ("" == password) {
+    } else if ("" == pwd) {
       console.log("密码不能为空")
       return;
     } else {
+      that.setData({
+        name: name,
+        pwd: pwd
+      })
+      this.req(function (data) {
+        // console.log(data)//TRUE
+        if (data) {
+          that.setData({
+            jumpdata: true
+          })
+          console.log("登录成功")
+          wx.switchTab({
+            url: '../index/index',})
+        } else {
+
+        }
+      })
 
     }
   },
+//ipconfig 查本机网址
+  req(call) {
+    wx.request({
+      url: "http://192.168.7.114:9999/userlogin.do?name=" + this.data.name + "&pwd=" + this.data.pwd,
+      // data: {
+      //   name: this.data.username,
+      //   pwd: this.data.password
+      // },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      method: 'get',
+      dataType: 'json',
+      responseType: 'text',
+      success: function (res) {
+        call(res.data)
+      },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
+  },
+  // //跳主页面
+  // jump: function () {
+  //   console.log(this.data.jumpdata)
+  //   if (this.data.jumpdata) {
+  //     wx.switchTab({
+  //      url: '../index/index',
+  //       success: function (res) {
 
+  //       },
+  //       fail: function (res) {
+
+  //       },
+  //       complete: function (res) {
+
+  //       },
+  //     })
+  //   }
+
+  // },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
-  },
+    if (decodeURIComponent(options.name)==undefined){
+      this.setData({
+        name: decodeURIComponent(options.name),
+        pwd: decodeURIComponent(options.pwd) 
+      });
+    }
+      console.log(this.data.src_list)
+    },
+  
+    
 
   /**
    * 生命周期函数--监听页面初次渲染完成

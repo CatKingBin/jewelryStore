@@ -20,36 +20,18 @@ Page({
     x: "../../img/x.png",
     xs: "../../img/xs.png",
     products: [{
-        imgsrc: "http://g.search2.alicdn.com/img/bao/uploaded/i4/i2/367859690/O1CN012LS4LQ1Tbw1rhjs_!!367859690.jpg_360x360.jpg",
-        title: "【饰悟】925纯银磨砂小圆球小耳钉女气质韩国个性简约睡觉不用摘",
+        img: "",
+        title: "",
         price: 13,
-        pay: 131
+        sold: 131
       },
-      {
-        imgsrc: "http://g.search2.alicdn.com/img/bao/uploaded/i4/i2/367859690/O1CN012LS4LQ1Tbw1rhjs_!!367859690.jpg_360x360.jpg",
-        title: "【饰悟】925纯银磨砂小圆球小耳钉女气质韩国个性简约睡觉不用摘",
-        price: 458,
-        pay: 22
-      },
-      {
-        imgsrc: "http://g.search2.alicdn.com/img/bao/uploaded/i4/i2/367859690/O1CN012LS4LQ1Tbw1rhjs_!!367859690.jpg_360x360.jpg",
-        title: "【饰悟】925纯银磨砂小圆球小耳钉女气质韩国个性简约睡觉不用摘",
-        price: 58,
-        pay: 433
-      },
-      {
-        imgsrc: "http://g.search2.alicdn.com/img/bao/uploaded/i4/i2/367859690/O1CN012LS4LQ1Tbw1rhjs_!!367859690.jpg_360x360.jpg",
-        title: "【饰悟】925纯银磨砂小圆球小耳钉女气质韩国个性简约睡觉不用摘",
-        price: 78,
-        pay: 1144
-      },
-      {
-        imgsrc: "http://g.search2.alicdn.com/img/bao/uploaded/i4/i2/367859690/O1CN012LS4LQ1Tbw1rhjs_!!367859690.jpg_360x360.jpg",
-        title: "【饰悟】925纯银磨砂小圆球小耳钉女气质韩国个性简约睡觉不用摘",
-        price: 18,
-        pay: 155
-      },
+     
     ]
+  },
+  jumpxiang:function(e){
+    console.log( this.data.products[e.currentTarget.dataset.id])
+    wx.navigateTo({
+       url: '../baobei/baobei',})
   },
   // 综合
   onClicka: function() {
@@ -80,7 +62,7 @@ Page({
    
     for (var i = 0; i < arr.length; i++) {
       for (var j = 0; j < i; j++) {
-        if (arr[j].pay < arr[i].pay) {
+        if (arr[j].sold < arr[i].sold) {
           var b = arr[j];
           arr[j] = arr[i];
           arr[i] = b;
@@ -183,7 +165,32 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-   
+    console.log(666)
+    const that = this;
+    this.req(function (data) {
+      console.log(data)
+      that.setData({
+        products: data
+      })
+    })
+  },
+  req(call) {
+    wx.request({
+      url: 'http://localhost:9999/necklaceNum',
+      data: '',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+},
+      method: 'GET',
+      dataType: 'json',
+      responseType: 'text',
+      success: function (res) {
+        call(res.data)
+        console.log("df")
+      },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
   },
 
   /**

@@ -3,20 +3,20 @@
   <view class='yhj-view'>
     <view class='yhj-view-red'>
       <view class='yhj-title'>优惠券</view>
-<!-- 优惠券 wx:for -->
-      <view class='yhj-one'  wx:for="{{yhj}}">
-         <view class='yhj-one-mon'>
+      <!-- 优惠券 wx:for -->
+      <view class='yhj-one' wx:for="{{yhj}}">
+        <view class='yhj-one-mon'>
           <text class='yhj-one-logo'>￥</text>{{item.num}}
-         </view>
-         <view class='yhj-one-man'>
-           <view>满{{item.man}}可使用</view>
-           <view class='yhj-one-man-data'>2019.3.1 - 2019.6.30</view>
-         </view>
-         <view class='yhj-one-li'>
+        </view>
+        <view class='yhj-one-man'>
+          <view>满{{item.man}}可使用</view>
+          <view class='yhj-one-man-data'>2019.3.1 - 2019.6.30</view>
+        </view>
+        <view class='yhj-one-li'>
           <view class='yhj-one-liji'>立即领取</view>
-         </view>
+        </view>
       </view>
-<!-- 结束 -->
+      <!-- 结束 -->
       <view class='more' wx:if="{{more}}" bindtap='onClickmore'>还有更多</view>
     </view>
   </view>
@@ -45,7 +45,7 @@
   <view class='manjian'>
     <view class='manjian-view'>
       <view class='manjian-title'>
-       
+
         <view class='man-30'>金币抵钱</view>
       </view>
       <view class='manjian-img'>
@@ -59,7 +59,30 @@
           <image src='https://gw.alicdn.com/imgextra/i1/367859690/O1CN012LS4LR7Hr2d8Syl_!!367859690.jpg_220x10000Q75.jpg_.webp'></image>
         </view>
       </view>
-      <view class='jinbi-footer'></view>
+      <view class='jinbi-footer'>
+        <view class='jinbi-footer-text'>
+          <view class='jinbi-footer-di'>抵5%</view>
+          <view class='dingdan'> 44人已下单</view>
+        </view>
+        <view class='jinbi-footer-text'>
+          <view class='jinbi-footer-di'>抵5%</view>
+          <view class='dingdan'> 344人已下单</view>
+        </view>
+        <view class='jinbi-footer-text'>
+          <view class='jinbi-footer-di'>抵5%</view>
+          <view class='dingdan'> 555人已下单</view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <view class='cuxiao'>店铺活动</view>
+  <view class='manjian foo'>
+    <view class='manjian-view'>
+      <view class='huiyuan'> 会员中心</view>
+      <view class='huiyuan bgcc'> 加入会员</view>
+      <view class='huiyuan bgcc'> 会员福利</view>
+      <view class='huiyuan bgcc'> 每日签到</view>
     </view>
   </view>
 </view>

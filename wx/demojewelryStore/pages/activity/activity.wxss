@@ -155,3 +155,55 @@
   background-color: rgb(242, 242, 242);
   font-size: 12px;
 }
+
+.jinbi-footer {
+  display: flex;
+  width: 654rpx;
+  text-align: center;
+  margin: auto;
+}
+
+.jinbi-footer-text {
+  width: 214rpx;
+  margin-right: 6rpx;
+}
+
+.jinbi-footer-di {
+  margin: auto;
+  font-size: 11px;
+  border-radius: 16rpx;
+  background-color: rgb(255, 246, 214);
+  color: rgb(255, 142, 0);
+  line-height: 16px;
+  margin-bottom: 14rpx;
+  width: 98rpx;
+}
+
+.dingdan {
+  text-align: center;
+  font-size: 11px;
+  color: rgb(153, 153, 153);
+  line-height: 11px;
+}
+
+.huiyuan {
+  margin: auto;
+  width: 92%;
+  height: 96rpx;
+  border-width: 0px 0px 1px;
+  border-style: solid;
+  border-color: rgb(253, 253, 253) rgb(253, 253, 253) rgb(228, 228, 228);
+  font-size: 16px;
+  line-height: 96rpx;
+  color: rgb(102, 102, 102);
+  
+}
+.bgcc{
+  background-image: url("https://i.loli.net/2019/04/12/5cb00bdec2f30.png");
+  background-size: 36rpx 36rpx;
+  background-repeat: no-repeat;
+  background-position: 560rpx 34rpx;
+}
+.foo{
+  margin-bottom: 40rpx;
+}
