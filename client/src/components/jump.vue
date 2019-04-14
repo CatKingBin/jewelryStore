@@ -1,22 +1,122 @@
 <template>
+  <div class="bigbox">
     <div class="box">
-        <h1>{{this.$route.query.img}}</h1>
-        <h1>{{this.$route.query.title}}</h1>
-        <h1>{{this.$route.query.price}}</h1>
-        <h1>{{this.$route.query.sold}}</h1>
+      <div class="box-img"><img :src="this.$route.query.img" alt></div>
+      <div class="content">
+          <p>{{this.$route.query.title}}</p>
+          <div class="content-price">
+              <p>淘宝价&nbsp&nbsp&nbsp<b class="b">￥<span>{{this.$route.query.price}}</span></b></p>
+              <p class="yishou">已售：{{this.$route.query.sold}}件</p>
+          </div>
+          <div class="num">
+              数量：<el-input-number size="small" v-model="num1" @change="handleChange" :min="1" :max="10" label="描述文字"></el-input-number>件（库存{{this.$route.query.inventory}}）
+          </div>
+          <div class="shop">
+              <div class="buy">立即购买</div>
+              <div class="add">加入购物车</div>
+          </div>
+      </div>
+      
     </div>
+  </div>
+
+   <!-- <h1>{{this.$route.query.img}}</h1>
+      <h1>{{this.$route.query.title}}</h1>
+      <h1>{{this.$route.query.price}}</h1>
+      <h1>{{this.$route.query.sold}}</h1> -->
 </template>
 
 <script>
 export default {
-    name:'jump'
-}
+  name: "jump",
+   data() {
+      return {
+        num1: 1
+      };
+    },
+    methods: {
+      handleChange(value) {
+        console.log(value);
+      }
+    }
+};
 </script>
 
-<style>
+<style scoped="scoped">
+.bigbox {
+  /* margin-top: 72px; */
+  width: 100%;
+}
 .box {
-    margin-top: 72px;
+    width: 80%;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    border: 1px solid grey;
+    justify-content: space-around;
+}
+.box-img {
+    margin-top: 50px;
+    width: 300px;
+    height: 450px;
+}
+.box-img > img {
+  width: 100%;
+  height: 300px;
+}
+.content {
+    width: 65%;
+    height: 300px;
+    margin-top: 50px;
+    padding-top: 10px;
+}
+.content>p {
+    font-size: 18px;
+}
+.content-price {
+    margin: 30px 0px;
+    width: 80%;
+    height: 100px;
+    font-size: 16px;
+    padding-top: 5px;
+    opacity: 0.7;
+    background-color: pink;
+}
+.content-price .b {
+     color: orangered;
+     font-size: 25px;
+     font-weight: 500;
+}
+.yishou {
+    padding-top: 20px;
+}
+.num {
     width: 100%;
-    
+    height: 50px;
+    margin-top: 30px;
+}
+.shop {
+    width: 100%;
+    height: 45px;
+    font-size: 18px;
+    line-height: 45px;
+    letter-spacing: 2px;
+    text-align: center;
+    display: flex;
+}
+.buy {
+    width: 150px;
+    height: 100%;
+    border-radius: 5px;
+    color:orangered;
+    background-color: rgb(247, 207, 207);
+}
+.add {
+  width: 150px;
+  height: 100%;
+  border-radius: 5px;
+  margin-left: 20px;
+  color: white;
+  background-color: orangered;
 }
 </style>

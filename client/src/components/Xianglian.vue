@@ -36,8 +36,8 @@ export default {
   },
   methods:{
     jump: function(item) {
-      console.log(item)
-      this.$router.push({path: "/jump", query: {img:item.img,title:item.title,price:item.price,sold:item.sold}});
+      // console.log(item)
+      this.$router.push({path: "/jump", query: {img:item.img,title:item.title,price:item.price,sold:item.sold,inventory:item.inventory}});
 			},
     send() {
       //页面加载完时触发函数
@@ -49,10 +49,10 @@ export default {
         })
         .then(result => {
           //请求成功
-        console.log(result.data)
+        // console.log(result.data)
         
         this.arr=result.data
-        console.log(this.arr)
+        // console.log(this.arr)
         })
         .catch(function() {
           //请求失败
@@ -67,7 +67,7 @@ export default {
 <style scoped="scoped">
 .bigbox {
   width: 100%;
-  margin-top: 72px;
+  /* margin-top: 72px; */
 }
 .contain {
    width: 100%;

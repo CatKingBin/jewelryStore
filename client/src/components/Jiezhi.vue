@@ -23,7 +23,7 @@
     </div>
      <div id="shuju">
       <ul class="ul-flex">
-        <li v-for="(item) in arr" :key="item" class="list" @click="jump(item)">
+        <li v-for="(item) in arr" :key="item.id" class="list" @click="jump(item)">
           <div class="list-img">
             <img :src="item.img" alt>
           </div>
@@ -52,7 +52,7 @@ export default {
   },
   methods:{
     jump: function(item) {
-      console.log(item)
+      // console.log(item)
       this.$router.push({path: "/jump", query: {obj:JSON.stringify(item)}});
 			},
     send() {
@@ -65,7 +65,7 @@ export default {
         })
         .then(result => {
           //请求成功
-        console.log(result.data)
+        // console.log(result.data)
         
         this.arr=result.data
         })
@@ -81,7 +81,7 @@ export default {
 
 <style scoped>
 .contain {
-  margin-top: 72px;
+  /* margin-top: 72px; */
   width: 100%;
 }
 .box {
