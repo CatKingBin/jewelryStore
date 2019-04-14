@@ -7,7 +7,7 @@
           <div class="list-word">{{item.title}}</div>
           <div class="list-price">
             <p >￥<span class="money">{{item.price}}</span></p>
-            <span class="price">已售：{{item.sold}}件</span>
+            <span class="price">已售:{{item.sold}}件</span>
           </div>
         </li>
 			</ul> 
