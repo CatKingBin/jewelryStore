@@ -36,7 +36,7 @@ export default {
   },
   methods:{
     jump: function(item) {
-      console.log(item)
+      // console.log(item)
       this.$router.push({path: "/jump", query: {obj:JSON.stringify(item)}});
 			},
     send() {
@@ -49,7 +49,7 @@ export default {
         })
         .then(result => {
           //请求成功
-        console.log(result.data)
+        // console.log(result.data)
         
         this.arr=result.data
         })
@@ -65,7 +65,7 @@ export default {
 
 <style scoped>
 .outer {
-  margin-top: 72px;
+  /* margin-top: 72px; */
   width: 100%;
 }
 .container {
