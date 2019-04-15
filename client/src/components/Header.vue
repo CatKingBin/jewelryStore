@@ -48,7 +48,8 @@
 
 <script>
 export default {
-  name: "HelloWorld",
+  name: "Header",
+  
   data(){
     return{
       storename:""
@@ -56,7 +57,23 @@ export default {
   },
   methods: {
     find(){
-      this.$router.push({path:'chaxun',query:{storename:this.storename}})
+      if(this.storename!=''){
+this.$http //发起ajax请求
+        .get("http://localhost:9999/findall", {
+         params:{
+             storename:this.storename
+         } 
+        })
+        .then(result => {
+          //请求成功
+        // console.log(result.data)
+        this.$router.push({path:'chaxun',query:{arr:result.data}})
+        })
+        .catch(function() {
+          //请求失败
+          alert("失败");
+        });
+      }
     }
   }
 };

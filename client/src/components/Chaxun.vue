@@ -1,8 +1,10 @@
 <template>
   <div class="bigbox">
+    <div ></div>
     <div id="shuju">
+      <h1 v-if="this.$route.query.arr.length===0">很遗憾！小生没有查询到您要的商品。。。</h1>
       <ul class="ul-flex">
-				<li v-for="(item,index) in arr" :key="index" class="list" @click="jump(item)">
+				<li v-for="(item,index) in this.$route.query.arr" :key="index" class="list" @click="jump(item)">
           <div class="list-img"><img :src="item.img" alt=""></div>
           <div class="list-word">{{item.title}}</div>
           <div class="list-price">
@@ -18,42 +20,11 @@
 <script>
 export default {
   name: "Xianglian",
-  data(){
-    return {
-        arr:''
-    } 
-  },
-  mounted() {
-    // 让send和resetForm函数在页面加载完后就执行
-    // console.log(this.$route.query.storename)
-    this.send(this.$route.query.storename);
-  },
   methods:{
     jump: function(item) {
       console.log(item)
       this.$router.push({path: "/jump", query: {img:item.img,title:item.title,price:item.price,sold:item.sold}});
-			},
-    send(storename) {
-      //页面加载完时触发函数
-      this.$http //发起ajax请求
-        .get("http://localhost:9999/findall", {
-         params:{
-             storename:storename
-         } 
-        })
-        .then(result => {
-          //请求成功
-        console.log(result.data)
-        
-        this.arr=result.data
-        // console.log(this.arr)
-        })
-        .catch(function() {
-          //请求失败
-          alert("失败");
-        });
-    },
-
+			}
   }
 }
 </script>
