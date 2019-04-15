@@ -1,6 +1,5 @@
 <template>
   <div class="bigbox">
-    <div ></div>
     <div id="shuju">
       <h1 v-if="this.$route.query.arr.length===0">很遗憾！小生没有查询到您要的商品。。。</h1>
       <ul class="ul-flex">
@@ -19,7 +18,8 @@
 
 <script>
 export default {
-  name: "Xianglian",
+  name: "Chaxun",
+  
   methods:{
     jump: function(item) {
       console.log(item)
@@ -32,34 +32,16 @@ export default {
 <style scoped="scoped">
 .bigbox {
   width: 100%;
-  margin-top: 72px;
-}
-.el-carousel__item {
-  background-position: center;
-  background-size: cover;
-}
-.el-carousel__item:nth-child(4n) {
-  background-image: url(https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2874166175,1318701774&fm=15&gp=0.jpg);
 }
 
-.el-carousel__item:nth-child(4n + 1) {
-  background-image: url(http://img0.imgtn.bdimg.com/it/u=3411804117,3716124559&fm=26&gp=0.jpg);
-}
-.el-carousel__item:nth-child(4n + 2) {
-  background-color: rgb(220, 245, 242);
-  background-image: url(http://img4.ido-love.com/art/pc/151334059046823088.png);
-}
-.el-carousel__item:nth-child(4n + 3) {
-  background-image: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555745936&di=7a81afb95b021a9a8faa71bcf104bec4&imgtype=jpg&er=1&src=http%3A%2F%2Fimg.alicdn.com%2Fimgextra%2Fi4%2F683623708%2FTB2hajwlVXXXXaOXpXXXXXXXXXX_%21%21683623708.jpg);
-}
 #shuju {
   width: 100%;
-  /* height: 2240px; */
+  height: 100%;
   background-color: rgba(248, 248, 248, 0.973);
 }
 .ul-flex {
   width: 90%;
-  height: 350px;
+  height: 100%;
   margin: 0px auto;
   padding: 20px 0px;
   display: flex;

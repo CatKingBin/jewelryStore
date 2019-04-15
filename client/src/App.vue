@@ -1,16 +1,15 @@
 <template>
   <div id="app">
-    <el-container>
-      <el-header height="72px" position="fixed">
-        <my-header></my-header>
-      </el-header>
-      <el-main>
-        <router-view></router-view>  
-      </el-main>
-      <el-footer height="100px">
-         <my-foot></my-foot>
-      </el-footer>
-    </el-container>
+    <div class="head">
+      <my-header></my-header>
+    </div>
+    <div class="blank"></div>
+    <div class="contain">
+      <router-view></router-view>  
+    </div>
+    <div class="foot">
+       <my-foot></my-foot>
+    </div>
   </div>
 </template>
 
@@ -26,7 +25,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped="scoped">
 * {
   margin: 0;
   padding: 0;
@@ -35,25 +34,29 @@ export default {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* text-align: center;
-  color: #2c3e50; */
 }
-.el-header,
-.el-footer {
+.head {
   width: 100%;
+  height: 72px;
   padding: 0px 0px;
   background-color: #f5f5f5;
-}
-.el-header {
   border-bottom: 3px solid rgb(5, 34, 5);
   text-align: left;
   position: fixed;
   z-index: 999;
 }
-.el-main {
+.blank {
   width: 100%;
-  margin-top: 72px;
+  height: 72px;
+}
+.contain {
+  width: 100%;
   padding: 0px 0px;
-
+}
+.foot {
+  width: 100%;
+  padding: 0px 0px;
+  background-color: #f5f5f5;
+  height: 100px;
 }
 </style>

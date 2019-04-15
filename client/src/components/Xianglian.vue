@@ -67,7 +67,6 @@ export default {
 <style scoped="scoped">
 .bigbox {
   width: 100%;
-  /* margin-top: 72px; */
 }
 .contain {
    width: 100%;

@@ -142,7 +142,7 @@ export default {
   width: 100%;
   /* height: 100%; */
   display: flex;
-  margin-top: 72px;
+  /* margin-top: 72px; */
 }
 .box1 {
   width: 50%;

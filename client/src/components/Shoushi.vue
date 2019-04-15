@@ -37,7 +37,7 @@ export default {
   methods:{
     jump: function(item) {
       // console.log(item)
-      this.$router.push({path: "/jump", query: {obj:JSON.stringify(item)}});
+      this.$router.push({path: "/jump", query: {img:item.img,title:item.title,price:item.price,sold:item.sold,inventory:item.inventory}});
 			},
     send() {
       //页面加载完时触发函数

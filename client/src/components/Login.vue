@@ -184,7 +184,7 @@ button {
   width: 100%;
   height: 625px;
   display: flex;
-  margin-top: 73px;
+  /* margin-top: 73px; */
 }
 .box {
   width: 50%;
