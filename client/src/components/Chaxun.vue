@@ -20,6 +20,7 @@
 <script>
 export default {
   name: "Xianglian",
+  
   methods:{
     jump: function(item) {
       console.log(item)
