@@ -7,6 +7,7 @@ import Ershi from '@/components/Ershi'
 import Shoushi from '@/components/Shoushi'
 import Jiezhi from '@/components/Jiezhi'
 import jump from '@/components/jump'
+import Addcar from '@/components/Addcar'
 import Login from '@/components/Login'
 import Reg from '@/components/Reg'
 import Chaxun from '@/components/Chaxun'
@@ -64,6 +65,11 @@ export default new Router({
 			path: '/chaxun',
 			name: 'Chaxun',
 			component: Chaxun
+		},
+		{
+			path: '/addcar',
+			name: 'Addcar',
+			component: Addcar
 		}
   ]
 })

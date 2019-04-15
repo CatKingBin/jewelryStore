@@ -1,5 +1,6 @@
 <template>
   <div class="outer" style="position:relative">
+   
     <div class="container">
       <ul>
         <li class="list">
@@ -19,8 +20,8 @@
         </li>
       </ul>
     </div>
-    <div class="logo"><i>今生今饰</i></div>
-
+    <!-- <div class="logo"><i>今生今饰</i></div> -->
+     <h3>请先登录！</h3>
     <div class="sousuo">
       <el-col :span="24" style="padding-bottom: 0px;">
         <el-form :inline="true">
@@ -34,14 +35,15 @@
       </el-col>
     </div>
 
-
-    <div class="login-car"> 
-      <router-link to="login">
-        <img class="imglogin" src="https://i.loli.net/2019/04/11/5caee84d99b69.png" alt>
-      </router-link>
-       <router-link to="car">
-        <img class="imgcar" src="https://i.loli.net/2019/04/11/5caee7e98d873.png" alt>
-      </router-link>
+    <div class="loginreg">
+      <ul>
+         <li class="list1">
+          <router-link class="mylink1" to="Login">登录</router-link>
+        </li>
+        <li class="list1">
+          <router-link class="mylink1" to="Reg">注册</router-link>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -93,15 +95,21 @@ li {
 li {
   list-style: none;
 }
-
+.outer > h3 {
+  display: inline-block;
+  line-height: 72px;
+  padding-left: 20px;
+}
 .container {
-  width: 45%;
+  width: 30%;
   height: 67px;
-  line-height: 67px;
+  line-height: 72px;
   font-size: 18px;
+  /* position: absolute; */
+  /* left: 150px; */
   display: inline-block;
   text-align: left;
-  padding-left: 40px;
+  padding-left: 20px;
 }
 
 .container > ul {
@@ -123,38 +131,39 @@ li {
 .container .list:hover .mylink {
   color: #333333;
 }
-.logo {
-  width: 135px;
+
+.loginreg {
+  display: inline-block;
+  line-height: 72px;
+  float: right;
+  width: 12%;
+  height: 67px;
+  line-height: 67px;
+  font-size: 18px;
+
+}
+.loginreg > ul {
+  line-height: 67px;
   height: 67px;
   display: inline-block;
-  line-height: 67px;
-  font-size: 30px;
-  color: coral;
-  letter-spacing: 3px;
-  float: center;
 }
-.login-car {
-  width: 110px;
-  height: 41px;
-  float: right;
+.loginreg .list1 {
   display: inline-block;
-  padding-right: 60px;
-  padding-top: 13px;
+  padding: 0 20px;
+  position: relative;
 }
-.login-car .imglogin {
-  width: 41px;
-  height: 41px;
-  padding-right: 23px;
-  display: inline-block;
+
+.loginreg .list1 .mylink1 {
+  color: #959595;
+  text-decoration: none;
 }
-.login-car .imgcar {
-  width: 38px;
-  height: 38px;
-  display: inline-block;
+
+.loginreg .list1:hover .mylink1 {
+  color: #333333;
 }
 .sousuo{
   position:absolute;
-  top: 10px;
-  right: 180px;
+  top: 17px;
+  right: 200px;
 }
 </style>
