@@ -98,7 +98,8 @@ li {
 .outer > h3 {
   display: inline-block;
   line-height: 72px;
-  padding-left: 20px;
+  position: absolute;
+  left: 540px;
 }
 .container {
   width: 30%;
