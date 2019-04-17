@@ -7,7 +7,7 @@
            <el-step title="" icon="el-icon-goods"></el-step>
            <el-step title="" icon="el-icon-star-off" ></el-step>
        </el-steps>
-       <h3>优选款式/实物拍摄</h3>
+       <h3>优选款式/实物拍摄1</h3>
     </div>
     <div class="center">
       <div class="center-left">
