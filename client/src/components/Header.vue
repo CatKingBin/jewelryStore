@@ -99,10 +99,10 @@ li {
   display: inline-block;
   line-height: 72px;
   position: absolute;
-  left: 540px;
+  left: 550px;
 }
 .container {
-  width: 30%;
+  width: 38%;
   height: 67px;
   line-height: 72px;
   font-size: 18px;
