@@ -24,6 +24,18 @@ function findall(req, res){
         res.send(results)
     })
 }
+function gouwucheadd(req, res){
+    let obj=JSON.parse(req.query.obj)
+    
+    jiezhiService.gouwucheadd(obj,function(results) {
+        res.send(results)
+    })
+}
+function gouwuche(req, res){
+    jiezhiService.gouwuche(function(results) {
+        res.send(results)
+    })
+}
 function jiezhidel(req, res){
     let id=req.query.id
     jiezhiService.jiezhidel(id,function(results) {
@@ -57,6 +69,10 @@ function jiezhifond(req, res){
   exports.jiezhifond=jiezhifond;
   exports.wxshuju=wxshuju;
   exports.findall=findall;
+  exports.gouwucheadd=gouwucheadd;
+  exports.gouwuche=gouwuche;
+
+
 
 
 

@@ -10,6 +10,8 @@ import jump from '@/components/jump'
 import Login from '@/components/Login'
 import Reg from '@/components/Reg'
 import Chaxun from '@/components/Chaxun'
+import Gouwuche from '@/components/Gouwuche'
+
 
 
 
@@ -64,6 +66,11 @@ export default new Router({
 			path: '/chaxun',
 			name: 'Chaxun',
 			component: Chaxun
+		},
+		{
+			path: '/gouwuche',
+			name: 'Gouwuche',
+			component: Gouwuche
 		}
   ]
 })

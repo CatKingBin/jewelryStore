@@ -30,7 +30,19 @@ function findall(storename,cb){
                     // 返回数据成功
         //          console.log(results)
                     cb(results);
-                
+             });
+}
+
+function gouwucheadd(obj,cb){
+        jiezhiDb.gouwucheadd(obj,function(results) { 
+                    // 返回数据成功
+                    cb(results);
+             });
+}
+function gouwuche(cb){
+        jiezhiDb.gouwuche(function(results) { 
+                    // 返回数据成功
+                    cb(results);
              });
 }
  function jiezhidel(id,cb) { 
@@ -77,6 +89,10 @@ function findall(storename,cb){
   exports.jiezhiNum=jiezhiNum;
   exports.wxshuju=wxshuju;
   exports.findall=findall;
+  exports.gouwucheadd=gouwucheadd;
+  exports.gouwuche=gouwuche;
+
+
 
 
 

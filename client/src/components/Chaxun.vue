@@ -1,7 +1,7 @@
 <template>
   <div class="bigbox">
     <div id="shuju">
-      <h1 v-if="this.$route.query.arr.length===0">很遗憾！小生没有查询到您要的商品。。。</h1>
+      <h1 v-if="this.$route.query.arr.length===0">很遗憾！没有查询到您要的商品。。。</h1>
       <ul class="ul-flex">
 				<li v-for="(item,index) in this.$route.query.arr" :key="index" class="list" @click="jump(item)">
           <div class="list-img"><img :src="item.img" alt=""></div>
@@ -30,6 +30,9 @@ export default {
 </script>
 
 <style scoped="scoped">
+h1{
+  height: 410px;
+}
 .bigbox {
   width: 100%;
 }

@@ -108,6 +108,34 @@ function addJieZhi(objs,cb) {
 	});
 }
 
+function gouwucheadd(obj,cb) {
+	dbutils.pool.getConnection(function(err, conn) {
+		if(err) { //连接失败
+			console.log(err)
+		} else { //连接成功,conn是连接对象
+			let sql = "insert into gouwuche (img,title,price,num) values(?,?,?,?) ";
+			conn.query(sql,[obj.img,obj.title,obj.price,obj.num],function(err1, results) {
+				cb(results);
+			})
+			//释放连接池
+			conn.release();
+		}
+	});
+}
+function gouwuche(cb) {
+	dbutils.pool.getConnection(function(err, conn) {
+		if(err) { //连接失败
+			console.log(err)
+		} else { //连接成功,conn是连接对象
+			let sql = "select * from gouwuche ";
+			conn.query(sql,function(err1, results) {
+				cb(results);
+			})
+			//释放连接池
+			conn.release();
+		}
+	});
+}
 function fondJieZhi(storename,cb) {
 	dbutils.pool.getConnection(function(err, conn) {
 		if(err) { //连接失败
@@ -131,6 +159,10 @@ exports.fondJieZhi = fondJieZhi;
 exports.jiezhiNum = jiezhiNum;
 exports.wxshuju = wxshuju;
 exports.findall = findall;
+exports.gouwucheadd = gouwucheadd;
+exports.gouwuche = gouwuche;
+
+
 
 
 

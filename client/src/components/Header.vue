@@ -39,7 +39,7 @@
       <router-link to="login">
         <img class="imglogin" src="https://i.loli.net/2019/04/11/5caee84d99b69.png" alt>
       </router-link>
-       <router-link to="car">
+       <router-link to="gouwuche">
         <img class="imgcar" src="https://i.loli.net/2019/04/11/5caee7e98d873.png" alt>
       </router-link>
     </div>
@@ -52,7 +52,8 @@ export default {
   
   data(){
     return{
-      storename:""
+      storename:"",
+     
     }
   },
   methods: {

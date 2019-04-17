@@ -196,6 +196,10 @@ app.get("/*",function(req,res){
 		jiezhiController.wxshuju(req,res)
 	}else if(urlPath=="/findall"){  //pc端查询所有数据
 		jiezhiController.findall(req,res)
+	}else if(urlPath=="/gouwucheadd"){  //购物车增加数据
+		jiezhiController.gouwucheadd(req,res)
+	}else if(urlPath=="/gouwuche"){  //购物车查询数据
+		jiezhiController.gouwuche(req,res)
 	}
 })
 

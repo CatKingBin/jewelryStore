@@ -13,7 +13,7 @@
           </div>
           <div class="shop">
               <div class="buy">立即购买</div>
-              <div class="add">加入购物车</div>
+              <div class="add" @click="add">加入购物车 </div>
           </div>
       </div>
     </div>
@@ -34,8 +34,34 @@ export default {
       };
     },
     methods: {
+      add(){
+         this.$http //发起ajax请求
+        .get("http://localhost:9999/gouwucheadd", {
+          params: { //请求携带的参数
+           obj:{
+            img:this.$route.query.img,
+            title:this.$route.query.title,
+            price:this.$route.query.price,
+            num:this.num1
+           }
+          }
+        })
+        .then(result => {
+          //请求成功
+          this.$message({
+            message: "成功加入购物车",
+            type: "success"
+          });
+        })
+        .catch(function() {
+          //请求失败
+          alert("添加失败");
+        });
+     
+      },
       handleChange(value) {
-        console.log(value);
+        this.num1=value;
+        console.log(this.num1)
       }
     }
 };
