@@ -45,9 +45,15 @@ function gouwuche(cb){
                     cb(results);
              });
 }
- function jiezhidel(id,cb) { 
+function gouwuchedel(obj,cb){
+        jiezhiDb.gouwuchedel(obj,function(results) { 
+                    // 返回数据成功
+                    cb(results);
+             });
+}
+ function jiezhidel(obj,cb) { 
 	
-    jiezhiDb.delJieZhi(id, function(results) { 
+    jiezhiDb.delJieZhi(obj, function(results) { 
             // 返回数据成功
 //          console.log(results)
             cb(results);
@@ -91,6 +97,8 @@ function gouwuche(cb){
   exports.findall=findall;
   exports.gouwucheadd=gouwucheadd;
   exports.gouwuche=gouwuche;
+  exports.gouwuchedel=gouwuchedel;
+
 
 
 

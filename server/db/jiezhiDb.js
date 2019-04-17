@@ -136,6 +136,20 @@ function gouwuche(cb) {
 		}
 	});
 }
+function gouwuchedel(obj,cb) {
+	dbutils.pool.getConnection(function(err, conn) {
+		if(err) { //连接失败
+			console.log(err)
+		} else { //连接成功,conn是连接对象
+			let sql = "delete from gouwuche where id=? ";
+			conn.query(sql,[obj.id],function(err1, results) {
+				cb(results);
+			})
+			//释放连接池
+			conn.release();
+		}
+	});
+}
 function fondJieZhi(storename,cb) {
 	dbutils.pool.getConnection(function(err, conn) {
 		if(err) { //连接失败
@@ -161,6 +175,8 @@ exports.wxshuju = wxshuju;
 exports.findall = findall;
 exports.gouwucheadd = gouwucheadd;
 exports.gouwuche = gouwuche;
+exports.gouwuchedel = gouwuchedel;
+
 
 
 

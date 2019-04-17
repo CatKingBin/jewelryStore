@@ -118,9 +118,7 @@ export default {
               });
           })
           .catch(() => {}); //弹框取消按钮触发
-					
 				}
-				
 			},
 			computed:{
 				all:function(){

@@ -36,7 +36,7 @@ export default {
   },
   methods:{
     jump: function(item) {
-      // console.log(item)
+      console.log(item)
       this.$router.push({path: "/jump", query: {img:item.img,title:item.title,price:item.price,sold:item.sold,inventory:item.inventory}});
 			},
     send() {

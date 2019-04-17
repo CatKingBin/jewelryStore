@@ -36,6 +36,13 @@ function gouwuche(req, res){
         res.send(results)
     })
 }
+function gouwuchedel(req, res){
+    let obj=JSON.parse(req.query.obj)
+    console.log(obj)
+    jiezhiService.gouwuchedel(obj,function(results) {
+        res.send(results)
+    })
+}
 function jiezhidel(req, res){
     let id=req.query.id
     jiezhiService.jiezhidel(id,function(results) {
@@ -71,6 +78,8 @@ function jiezhifond(req, res){
   exports.findall=findall;
   exports.gouwucheadd=gouwucheadd;
   exports.gouwuche=gouwuche;
+  exports.gouwuchedel=gouwuchedel;
+
 
 
 

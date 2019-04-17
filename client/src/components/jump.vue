@@ -14,15 +14,11 @@
           <div class="shop">
               <div class="buy">立即购买</div>
               <div class="add" @click="add">加入购物车 </div>
+
           </div>
       </div>
     </div>
   </div>
-
-   <!-- <h1>{{this.$route.query.img}}</h1>
-      <h1>{{this.$route.query.title}}</h1>
-      <h1>{{this.$route.query.price}}</h1>
-      <h1>{{this.$route.query.sold}}</h1> -->
 </template>
 
 <script>
@@ -63,7 +59,9 @@ export default {
         this.num1=value;
         console.log(this.num1)
       }
-    }
+  }
+   
+
 };
 </script>
 
