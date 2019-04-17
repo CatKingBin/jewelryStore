@@ -40,7 +40,7 @@
          <li class="list1">
           <router-link class="mylink1" to="Login">登录</router-link>
         </li>
-        <li class="list1">
+        <li class="list1 list2">
           <router-link class="mylink1" to="Reg">注册</router-link>
         </li>
       </ul>
@@ -99,10 +99,10 @@ li {
   display: inline-block;
   line-height: 72px;
   position: absolute;
-  left: 540px;
+  left: 550px;
 }
 .container {
-  width: 30%;
+  width: 38%;
   height: 67px;
   line-height: 72px;
   font-size: 18px;
@@ -146,14 +146,16 @@ li {
 .loginreg > ul {
   line-height: 67px;
   height: 67px;
+  margin: 0px 0px;
   display: inline-block;
 }
 .loginreg .list1 {
   display: inline-block;
-  padding: 0 20px;
   position: relative;
 }
-
+.list2 {
+  padding-left: 10px;
+}
 .loginreg .list1 .mylink1 {
   color: #959595;
   text-decoration: none;
