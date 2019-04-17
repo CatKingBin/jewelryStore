@@ -38,7 +38,7 @@ function gouwuche(req, res){
 }
 function gouwuchedel(req, res){
     let obj=JSON.parse(req.query.obj)
-    console.log(obj)
+    // console.log(obj)
     jiezhiService.gouwuchedel(obj,function(results) {
         res.send(results)
     })
