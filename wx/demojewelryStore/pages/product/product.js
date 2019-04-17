@@ -10,6 +10,7 @@ Page({
       '新品',
       '价格'
     ],
+    dataone:'',
     pro: true,
     activea: 1,
     activeb: 0,
@@ -29,9 +30,16 @@ Page({
     ]
   },
   jumpxiang:function(e){
-    console.log( this.data.products[e.currentTarget.dataset.id])
+    console.log(this.data.products[e.currentTarget.dataset.id]);
+    var dat = this.data.products[e.currentTarget.dataset.id];
+    this.setData({
+      dataone: dat
+
+    });
+    // var that=this;
     wx.navigateTo({
-       url: '../baobei/baobei',})
+       // url: '../baobei/baobei?data=' + JSON.stringify (this.data.dataone)
+      url: '../baobei/baobei?img=' + this.data.dataone.img + "&price=" + this.data.dataone.price + "&title=" + this.data.dataone.title + "&sold=" + this.data.dataone.sold})
   },
   // 综合
   onClicka: function() {
@@ -176,7 +184,7 @@ Page({
   },
   req(call) {
     wx.request({
-      url: 'http://localhost:9999/necklaceNum',
+      url: 'http://localhost:9999/wxshuju',
       data: '',
       header: {
         'content-type': 'application/x-www-form-urlencoded'

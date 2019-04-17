@@ -1,30 +1,10 @@
-// pages/classify/classify.js
+// pages/gouwc/gouwc.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    dat:true
-  },
-  //跳注册页面
-  jump: function () {
-   
-      wx.navigateTo({
-        url: '../reg/reg',
-        success: function (res) {
-
-        },
-        fail: function (res) {
-
-        },
-        complete: function (res) {
-
-        },
-      })
-    this.setData({
-      dat: false,
-    })
 
   },
 

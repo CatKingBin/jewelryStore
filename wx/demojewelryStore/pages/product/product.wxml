@@ -43,7 +43,7 @@
   </view>
 
   <view wx:else class='prod'>
-    <view class='prod-view' wx:for="{{products}}">
+    <view class='prod-view' wx:for="{{products}}" bindtap='jumpxiang' data-id='{{index}}'>
       <view class='prod-view-img'>
         <image src='{{item.img}}'></image>
       </view>

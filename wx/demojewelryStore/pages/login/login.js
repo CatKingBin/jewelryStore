@@ -48,7 +48,7 @@ Page({
 //ipconfig 查本机网址
   req(call) {
     wx.request({
-      url: "http://192.168.7.114:9999/userlogin.do?name=" + this.data.name + "&pwd=" + this.data.pwd,
+      url: "http://localhost:9999/userlogin.do?name=" + this.data.name + "&pwd=" + this.data.pwd,
       // data: {
       //   name: this.data.username,
       //   pwd: this.data.password

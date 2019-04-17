@@ -1,13 +1,18 @@
 {
   "pages": [
       "pages/index/index",
+    "pages/classify/classify",
+    "pages/gouwc/gouwc",
+    "pages/product/product",
     "pages/baobei/baobei",
+    
+   
     "pages/login/login",
-   "pages/product/product",
+   
     "pages/activity/activity",
     "pages/reg/reg",
      
-    "pages/classify/classify",
+   
     "pages/service/service"
     
     
@@ -46,12 +51,6 @@
         "text": "个人中心",
         "iconPath": "img/g.png",
         "selectedIconPath": "img/gg.png"
-      },
-      {
-        "pagePath": "pages/service/service",
-        "text": "客服",
-        "iconPath": "img/e.png",
-        "selectedIconPath": "img/ee.png"
       }
     ]
   },
