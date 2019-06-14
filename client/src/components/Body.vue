@@ -1,7 +1,6 @@
 <template>
   <div class="contain">
     <div class="top"></div>
-    <div class="top1"></div>
     <div class="top2"></div>
     <div class="top3"></div>
     <div class="top4"></div>
@@ -39,13 +38,7 @@ export default {
   height: 1023px;
   margin-left: -250px;
 }
-.top1 {
-  width: 100%;
-  height: 1282px;
-  background-image: url(https://gdp.alicdn.com/imgextra/i4/367859690/O1CN01e8INlG2LS4NK9C1CQ_!!367859690.jpg);
-  background-position: center;
-  background-size: cover;
-}
+
 .top2 {
     width: 100%;
     height: 1400px;
