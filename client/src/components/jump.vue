@@ -5,7 +5,7 @@
       <div class="content">
           <p>{{this.$route.query.title}}</p>
           <div class="content-price">
-              <p>价格&nbsp&nbsp&nbsp<b class="b">￥<span>{{this.$route.query.price}}</span></b></p>
+              <p>价格&nbsp;&nbsp;&nbsp;<b class="b">￥<span>{{this.$route.query.price}}</span></b></p>
               <p class="yishou">已售：{{this.$route.query.sold}}件</p>
           </div>
           <div class="num">

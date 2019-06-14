@@ -81,6 +81,23 @@ this.$http //发起ajax请求
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.login-car{
+  position: relative;
+}
+.imglogin{
+  position: absolute;
+  top: -50px;
+  left: 1200px;
+  width: 40px;
+  height: 40px;
+}
+.imgcar{
+  position: absolute;
+  top: -48px;
+  left: 1270px;
+  width: 37px;
+  height: 36px;
+}
 .outer {
   width: 100%;
 }
