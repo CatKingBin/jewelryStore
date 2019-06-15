@@ -84,22 +84,20 @@ export default {
   }
 #shuju {
   width: 100%;
-  height: 2240px;
+  /* height: 2040px; */
   background-color: rgba(248, 248, 248, 0.973);
 }
 .ul-flex {
-  width: 90%;
-  height: 350px;
+  width: 94%;
   margin: 0px auto;
-  padding: 20px 0px;
   display: flex;
   flex-wrap: wrap;
 
 }
 .list {
   width: 23%;
-  height: 100%;
-  margin: 10px 10px;
+  height: 350px;
+  margin: 20px 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -108,6 +106,7 @@ export default {
 .list-img {
    width: 100%;
    height: 72%;
+   cursor:pointer;
 }
 .list-img>img {
   width: 100%;
@@ -123,6 +122,7 @@ export default {
   width: 100%;
   height: 10%;
   display: flex;
+  justify-content: space-around;
   font-size: 14px;
 }
 .list-price>p {
@@ -132,7 +132,7 @@ export default {
   color: orangered;
 }
 .price {
-  padding-left: 35%;
+  /* padding-left: 35%; */
   color: gray;
   font-size: 14px;
 }

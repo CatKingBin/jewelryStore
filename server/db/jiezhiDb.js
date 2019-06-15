@@ -113,9 +113,22 @@ function gouwucheadd(obj,cb) {
 		if(err) { //连接失败
 			console.log(err)
 		} else { //连接成功,conn是连接对象
-			let sql = "insert into gouwuche (img,title,price,num) values(?,?,?,?) ";
-			conn.query(sql,[obj.img,obj.title,obj.price,obj.num],function(err1, results) {
-				cb(results);
+			let sql = "select num from gouwuche where img=? ";
+			conn.query(sql,[obj.img],function(err1, results) {
+				// console.log(results[0].num)
+				if(results.length==0){
+					let sql = "insert into gouwuche (img,title,price,num) values(?,?,?,?) ";
+					conn.query(sql,[obj.img,obj.title,obj.price,obj.num],function(err1, results) {
+						cb(results);
+					})
+				}else {
+					let n=results[0].num
+					let sql = "update gouwuche set num=?+? where img=? ";
+					conn.query(sql,[obj.num,n,obj.img],function(err1, results) {
+						cb(results);
+					})
+				}
+				
 			})
 			//释放连接池
 			conn.release();
@@ -130,6 +143,7 @@ function gouwuche(cb) {
 			let sql = "select * from gouwuche ";
 			conn.query(sql,function(err1, results) {
 				cb(results);
+				// console.log(results.length)
 			})
 			//释放连接池
 			conn.release();

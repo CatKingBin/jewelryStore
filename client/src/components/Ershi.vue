@@ -5,6 +5,7 @@
       <div class="topimg2"></div>
       <div class="topimg3"></div>
     </div>
+    <div class="box"></div>
     <div id="shuju">
       <ul class="ul-flex">
         <li v-for="(item) in arr" :key="item.id" class="list" @click="jump(item)">
@@ -67,16 +68,19 @@ export default {
 .container {
   width: 100%;
 }
+.box {
+  height: 100px;
+  background-color: rgba(248, 248, 248, 0.973);;
+}
 .top {
   width: 100%;
-  height: 300px;
+  height: 350px;
   background-position: center;
   position: relative;
-  /* margin-top: 72px; */
-  margin-bottom: 180px;
   opacity: 0.7;
   background-size: contain;
-  background-image: url(http://img4.imgtn.bdimg.com/it/u=2496227324,3461031432&fm=26&gp=0.jpg);
+  background-image: url(http://img2.imgtn.bdimg.com/it/u=611454647,1323463851&fm=15&gp=0.jpg);
+  background-size: contain;
 }
 .topimg1 {
   width: 200px;
@@ -87,7 +91,7 @@ export default {
   top: 65%;
   left: 25%;
   z-index: 99;
-  background-image: url(http://img0.imgtn.bdimg.com/it/u=541665049,679696133&fm=26&gp=0.jpg);
+  background-image: url(http://img0.imgtn.bdimg.com/it/u=2734117651,293715203&fm=26&gp=0.jpg);
 }
 .topimg2 {
   width: 250px;
@@ -97,7 +101,7 @@ export default {
   background-size: cover;
   top: 20%;
   left: 38%;
-  background-image: url(http://img0.imgtn.bdimg.com/it/u=2736817597,1922491119&fm=26&gp=0.jpg);
+  background-image: url(http://img4.imgtn.bdimg.com/it/u=646554755,2786917241&fm=26&gp=0.jpg);
 }
 .topimg3 {
   width: 200px;
@@ -107,26 +111,24 @@ export default {
   background-size: cover;
   top: 65%;
   left: 55%;
-  background-image: url(http://img5.imgtn.bdimg.com/it/u=3386306103,3030630408&fm=26&gp=0.jpg);
+  background-image: url(http://img2.imgtn.bdimg.com/it/u=1492424836,1588587910&fm=26&gp=0.jpg);
 }
 #shuju {
   width: 100%;
-  height: 2240px;
+  /* height: 2040px; */
   background-color: rgba(248, 248, 248, 0.973);
 }
 .ul-flex {
-  width: 90%;
-  height: 350px;
+  width: 94%;
   margin: 0px auto;
-  padding: 20px 0px;
   display: flex;
   flex-wrap: wrap;
 
 }
 .list {
   width: 23%;
-  height: 100%;
-  margin: 10px 10px;
+  height: 350px;
+  margin: 20px 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -135,6 +137,7 @@ export default {
 .list-img {
    width: 100%;
    height: 72%;
+   cursor:pointer;
 }
 .list-img>img {
   width: 100%;
@@ -150,6 +153,7 @@ export default {
   width: 100%;
   height: 10%;
   display: flex;
+  justify-content: space-around;
   font-size: 14px;
 }
 .list-price>p {
@@ -159,7 +163,7 @@ export default {
   color: orangered;
 }
 .price {
-  padding-left: 35%;
+  /* padding-left: 35%; */
   color: gray;
   font-size: 14px;
 }

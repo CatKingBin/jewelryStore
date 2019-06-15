@@ -6,7 +6,7 @@
       <el-col :span="24" style="padding-bottom: 0px;">
         <el-form :inline="true">
           <el-form-item>
-            <el-input placeholder="请输入关键字" v-model="storename"></el-input>
+            <el-input placeholder="请输入关键字" v-model="storename" @keyup.enter.native="find"></el-input>
           </el-form-item>
           <el-form-item>
             <el-button type="primary" @click="find">查询</el-button>
@@ -63,7 +63,7 @@
             <router-link class="mylink" to="callus">联系我们</router-link>
           </el-menu-item>
         </el-submenu>
-        </el-menu-item>
+      </el-menu-item>
       </el-menu>
     
     <div class="login-car hidden-xs-only">
@@ -94,6 +94,7 @@ export default {
       console.log(key, keyPath);
     },
     find() {
+    
       if (this.storename != "") {
         this.$http //发起ajax请求
           .get("http://localhost:9999/findall", {

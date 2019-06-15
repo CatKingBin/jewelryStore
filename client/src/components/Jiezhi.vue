@@ -88,7 +88,7 @@ export default {
   width: 100%;
   height: 400px;
   background-position: center;
-  background-image: url(http://img4.ido-love.com/art/pc/151317231047514220.png);
+  background-image: url('../assets/jiezhi.jpg');
 }
 .buzou {
     margin: 50px 0px;
@@ -111,19 +111,24 @@ export default {
   height: 100%;
 }
 .el-carousel__item:nth-child(4n) {
-    background-image: url( http://img0.imgtn.bdimg.com/it/u=1353475417,2719900523&fm=26&gp=0.jpg);
+    background-image: url( http://img5.imgtn.bdimg.com/it/u=3475922315,3842169334&fm=26&gp=0.jpg);
+    background-size: cover;
 }
 
 .el-carousel__item:nth-child(4n + 1) {
-    background-image: url( http://img1.imgtn.bdimg.com/it/u=3604790492,590920427&fm=26&gp=0.jpg);
+    background-image: url( http://img4.imgtn.bdimg.com/it/u=1891876180,4218965884&fm=26&gp=0.jpg);
     background-size: cover;
 }
 .el-carousel__item:nth-child(4n + 2) {
-   background-image: url(http://img0.imgtn.bdimg.com/it/u=3543962141,286111177&fm=15&gp=0.jpg);
+   background-image: url(http://img2.imgtn.bdimg.com/it/u=2912915834,2600631262&fm=26&gp=0.jpg);
+    background-size: cover;
+   
 }
 .el-carousel__item:nth-child(4n + 3) {
-  background-image: url( http://img3.imgtn.bdimg.com/it/u=2156493573,772595904&fm=26&gp=0.jpg);
-}
+  background-image: url( http://img0.imgtn.bdimg.com/it/u=3032510515,599388983&fm=26&gp=0.jpg);
+  background-size: cover;
+  
+ }
 
 .title-flex {
   width: 57%;
@@ -165,22 +170,20 @@ export default {
 }
 #shuju {
   width: 100%;
-  height: 2240px;
+  /* height: 2040px; */
   background-color: rgba(248, 248, 248, 0.973);
 }
 .ul-flex {
-  width: 90%;
-  height: 350px;
+  width: 94%;
   margin: 0px auto;
-  padding: 20px 0px;
   display: flex;
   flex-wrap: wrap;
 
 }
 .list {
   width: 23%;
-  height: 100%;
-  margin: 10px 10px;
+  height: 350px;
+  margin: 20px 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -189,6 +192,7 @@ export default {
 .list-img {
    width: 100%;
    height: 72%;
+   cursor:pointer;
 }
 .list-img>img {
   width: 100%;
@@ -204,6 +208,7 @@ export default {
   width: 100%;
   height: 10%;
   display: flex;
+  justify-content: space-around;
   font-size: 14px;
 }
 .list-price>p {
@@ -213,7 +218,7 @@ export default {
   color: orangered;
 }
 .price {
-  padding-left: 35%;
+  /* padding-left: 35%; */
   color: gray;
   font-size: 14px;
 }

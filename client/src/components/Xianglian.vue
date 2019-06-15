@@ -13,7 +13,7 @@
           <div class="list-img"><img :src="item.img" alt=""></div>
           <div class="list-word">{{item.title}}</div>
           <div class="list-price">
-            <p >￥<span class="money">{{item.price}}</span></p>
+            <p >￥<span class="money">{{item.price}}元</span></p>
             <span class="price">已售：{{item.sold}}件</span>
           </div>
         </li>
@@ -31,7 +31,7 @@ export default {
     } 
   },
   mounted() {
-    // 让send和resetForm函数在页面加载完后就执行
+    // 让send函数在页面加载完后就执行
     this.send();
   },
   methods:{
@@ -66,7 +66,7 @@ export default {
 
 <style scoped="scoped">
 .bigbox {
-  width: 100%;
+  /* width: 100%; */
 }
 .contain {
    width: 100%;
@@ -81,11 +81,11 @@ export default {
   background-size: cover;
 }
 .el-carousel__item:nth-child(4n) {
-  background-image: url(https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2874166175,1318701774&fm=15&gp=0.jpg);
+  background-image: url(http://img3.imgtn.bdimg.com/it/u=3539017204,224705441&fm=26&gp=0.jpg);
 }
 
 .el-carousel__item:nth-child(4n + 1) {
-  background-image: url(http://img0.imgtn.bdimg.com/it/u=3411804117,3716124559&fm=26&gp=0.jpg);
+  background-image: url(http://img4.imgtn.bdimg.com/it/u=1074931463,154668257&fm=26&gp=0.jpg);
 }
 .el-carousel__item:nth-child(4n + 2) {
   background-color: rgb(220, 245, 242);
@@ -96,22 +96,20 @@ export default {
 }
 #shuju {
   width: 100%;
-  height: 2240px;
+  /* height: 2040px; */
   background-color: rgba(248, 248, 248, 0.973);
 }
 .ul-flex {
-  width: 90%;
-  height: 350px;
+  width: 94%;
   margin: 0px auto;
-  padding: 20px 0px;
   display: flex;
   flex-wrap: wrap;
 
 }
 .list {
   width: 23%;
-  height: 100%;
-  margin: 10px 10px;
+  height: 350px;
+  margin: 20px 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -136,6 +134,7 @@ export default {
   width: 100%;
   height: 10%;
   display: flex;
+  justify-content: space-around;
   font-size: 14px;
 }
 .list-price>p {
@@ -145,7 +144,7 @@ export default {
   color: orangered;
 }
 .price {
-  padding-left: 35%;
+  /* padding-left: 35%; */
   color: gray;
   font-size: 14px;
 }

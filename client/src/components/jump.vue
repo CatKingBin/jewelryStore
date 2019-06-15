@@ -12,8 +12,8 @@
               数量：<el-input-number size="small" v-model="num1" @change="handleChange" :min="1" :max="10" label="描述文字"></el-input-number>件（库存{{this.$route.query.inventory}}）
           </div>
           <div class="shop">
-              <div class="buy">立即购买</div>
-              <div class="add" @click="add">加入购物车 </div>
+              <button class="buy" @click="buy">立即购买</button>
+              <button class="add" @click="add">加入购物车 </button>
 
           </div>
       </div>
@@ -30,7 +30,19 @@ export default {
       };
     },
     methods: {
+      buy(){
+         this.$message({
+            message: "请先登录!",
+            type: "warning"
+          });
+      },
+      handleChange(value) {
+        this.num1=value;
+        console.log(this.num1)
+      },
       add(){
+        console.log(666)
+        console.log(this.num1)
          this.$http //发起ajax请求
         .get("http://localhost:9999/gouwucheadd", {
           params: { //请求携带的参数
@@ -54,11 +66,8 @@ export default {
           alert("添加失败");
         });
      
-      },
-      handleChange(value) {
-        this.num1=value;
-        console.log(this.num1)
       }
+      
   }
    
 
@@ -66,6 +75,7 @@ export default {
 </script>
 
 <style scoped="scoped">
+
 .bigbox {
   width: 100%;
 }
@@ -130,15 +140,37 @@ export default {
     width: 150px;
     height: 100%;
     border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-weight: bold;
     color:orangered;
+    cursor: pointer;
     background-color: rgb(247, 207, 207);
+    transition: all 0.4s
+}
+.buy:hover {
+  color: white;
+  background-color: orangered;
+  transition: all 0.4s
 }
 .add {
   width: 150px;
   height: 100%;
   border-radius: 5px;
+  border: none;
+  outline: none;
   margin-left: 20px;
+   font-size: 18px;
+    font-weight: bold;
   color: white;
+  cursor: pointer;
   background-color: orangered;
+  transition: all 0.4s
+}
+.add:hover {
+  color: orangered;
+  background-color: rgb(247, 207, 207);
+  transition: all 0.4s
 }
 </style>

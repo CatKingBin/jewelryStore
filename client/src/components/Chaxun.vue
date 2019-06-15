@@ -39,22 +39,20 @@ h1{
 
 #shuju {
   width: 100%;
-  height: 100%;
+  /* height: 2040px; */
   background-color: rgba(248, 248, 248, 0.973);
 }
 .ul-flex {
-  width: 90%;
-  height: 100%;
+  width: 92%;
   margin: 0px auto;
-  padding: 20px 0px;
   display: flex;
   flex-wrap: wrap;
 
 }
 .list {
   width: 23%;
-  height: 100%;
-  margin: 10px 10px;
+  height: 350px;
+  margin: 20px 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -63,6 +61,7 @@ h1{
 .list-img {
    width: 100%;
    height: 72%;
+   cursor:pointer;
 }
 .list-img>img {
   width: 100%;
@@ -78,6 +77,7 @@ h1{
   width: 100%;
   height: 10%;
   display: flex;
+  justify-content: space-around;
   font-size: 14px;
 }
 .list-price>p {
@@ -87,7 +87,7 @@ h1{
   color: orangered;
 }
 .price {
-  padding-left: 35%;
+  /* padding-left: 35%; */
   color: gray;
   font-size: 14px;
 }

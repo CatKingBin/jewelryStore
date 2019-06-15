@@ -25,7 +25,8 @@
             <div v-if="mima3">两次密码不同！</div>
           </div>
           <div class="we">
-            <input type="checkbox">我已阅读<span>《今生今饰注册协议》</span>
+            <input type="checkbox" v-model="msg">我已阅读<span>《今生今饰注册协议》</span>
+            <div v-if="gou">请勾选协议</div>
           </div>
           <div>
             <button @click="reg">
@@ -49,6 +50,8 @@ export default {
   name: "Reg",
   data() {
     return {
+      gou:false,
+      msg:false,
       box: {
         height: ""
       },
@@ -81,7 +84,7 @@ export default {
             }
           })
           .then(result => {
-            console.log(result.data);
+            // console.log(result.data);
             if (result.data) {
               this.exsit = true;
             } else {
@@ -101,9 +104,13 @@ export default {
         this.kong = false;
         this.mima1 = true;
       } else if (this.users.pwd != this.users.pwd1) {
-        (this.mima1 = false), (this.mima3 = true);
-      } else {
+        this.mima1 = false;
+        this.mima3 = true;
+      } else if(!this.msg){
         this.mima3 = false;
+        this.gou=true;
+      }else{
+        this.gou=false;
         this.$http
           .post("http://localhost:9999/userreg.do", this.users, {
             transformRequest: [
@@ -200,6 +207,9 @@ span {
 }
 .we > span {
 	color: red;
+}
+.we>div {
+  color: red;
 }
 button > a {
   display: inline-block;
