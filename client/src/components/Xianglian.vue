@@ -120,6 +120,7 @@ export default {
 .list-img {
    width: 100%;
    height: 72%;
+   cursor:pointer;
 }
 .list-img>img {
   width: 100%;

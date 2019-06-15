@@ -16,6 +16,8 @@ import Story from '@/components/Story'
 import CallUs from '@/components/CallUs'
 import Design from '@/components/Design'
 import Message from '@/components/Message'
+import App from '@/components/App'
+
 
 
 
@@ -99,6 +101,11 @@ export default new Router({
 			path: '/message',
 			name: 'Message',
 			component: Message
+		},
+		{
+			path: '/app',
+			name: 'App',
+			component: App
 		}
   ]
 })
