@@ -1,7 +1,7 @@
 <template>
      <div class="outer">
         <div v-if="products.length">
-					<div class="goods" v-for="(item, index) in products">
+					<div class="goods" v-for="(item, index) in products" v-bind:key="item">
 					<div class="goods-img"><img src="https://img.alicdn.com/bao/uploaded/i2/367859690/O1CN01GNbNnG2LS4OERI6SX_!!367859690.jpg_240x240.jpg" alt=""></div>
 					<ul>
 						<li class="one" style="display:block"> 商品名称：{{ item.name }} </li>

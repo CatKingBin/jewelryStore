@@ -12,6 +12,13 @@ import Login from '@/components/Login'
 import Reg from '@/components/Reg'
 import Chaxun from '@/components/Chaxun'
 import Gouwuche from '@/components/Gouwuche'
+import Story from '@/components/Story'
+import CallUs from '@/components/CallUs'
+import Design from '@/components/Design'
+import Message from '@/components/Message'
+
+
+
 
 
 
@@ -20,8 +27,8 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-		//	path: 导航路径,/可以用来表示首页
-		//  name: 组件名称
+	   //	path: 导航路径,/可以用来表示首页
+	   //  name: 组件名称
 		//  component: 需要切换的组件
 		{
 			path: '/',
@@ -72,6 +79,26 @@ export default new Router({
 			path: '/gouwuche',
 			name: 'Gouwuche',
 			component: Gouwuche
+		},
+		{
+			path: '/story',
+			name: 'Story',
+			component: Story
+		},
+		{
+			path: '/callus',
+			name: 'CallUs',
+			component: CallUs
+		},
+		{
+			path: '/design',
+			name: 'Design',
+			component: Design
+		},
+		{
+			path: '/message',
+			name: 'Message',
+			component: Message
 		}
   ]
 })
