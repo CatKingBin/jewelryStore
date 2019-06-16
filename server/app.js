@@ -201,7 +201,7 @@ app.get("/*",function(req,res){
 		jiezhiController.gouwucheadd(req,res)
 	}else if(urlPath=="/gouwuche"){  //购物车查询数据
 		jiezhiController.gouwuche(req,res)
-	}else if(urlPath=="/gouwuchedel"){  //购物车查询数据
+	}else if(urlPath=="/gouwuchedel"){  //购物车删除数据
 		jiezhiController.gouwuchedel(req,res)
 	}
 })

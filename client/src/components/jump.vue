@@ -1,7 +1,7 @@
 <template>
   <div class="bigbox">
     <div class="box">
-      <div class="box-img"><img :src="this.$route.query.img" alt></div>
+      <div class="box-img"><router-link :to="this.$route.query.path"><img :src="this.$route.query.img" alt></router-link> </div>
       <div class="content">
           <p>{{this.$route.query.title}}</p>
           <div class="content-price">
@@ -32,7 +32,7 @@ export default {
     methods: {
       buy(){
          this.$message({
-            message: "请先登录!",
+            message: "亲，你还没有登录哦!",
             type: "warning"
           });
       },
@@ -91,7 +91,7 @@ export default {
     width: 300px;
     height: 450px;
 }
-.box-img > img {
+.box-img  img {
   width: 100%;
   height: 300px;
 }

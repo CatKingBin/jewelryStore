@@ -19,6 +19,7 @@
         </div>
       </div>
     </div>
+    <router-link :to="this.$route.query.path"><button>返回</button></router-link> 
   </div>
 </template>
 <script>
@@ -29,6 +30,16 @@ export default {
 <style scoped>
 #app {
   position: relative;
+}
+button {
+  position: absolute;
+  top: 426px;
+  left: 626px;
+  width: 100px;
+  height: 50px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 50px;
 }
 .header {
   display: flex;

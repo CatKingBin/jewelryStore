@@ -10,10 +10,10 @@
         <div class="t24" @click="jump(obj5)"></div>
         <div class="t25" @click="jump(obj6)"></div>
         <div class="t26" @click="jump(obj7)"></div>
-        <router-link class="t27" to='app'></router-link>
-        <router-link class="t28" to='app'></router-link>
-        <router-link class="t29" to='app'></router-link>
-        <router-link class="t30" to='app'></router-link>
+        <div class="t27" @click="jump1"></div>
+        <div class="t28" @click="jump1"></div>
+        <div class="t29" @click="jump1"></div>
+        <div class="t30" @click="jump1"></div>
     </div>
     <div class="top3">
       <div class="t31" @click="jump(obj31)"></div>
@@ -152,7 +152,10 @@ export default {
   },
   methods: {
     jump(obj){
-      this.$router.push({path:'/jump',query:{img:obj.img,title:obj.title,price:obj.price,sold:obj.sold,inventory:obj.inventory}})
+      this.$router.push({path:'/jump',query:{path:"/",img:obj.img,title:obj.title,price:obj.price,sold:obj.sold,inventory:obj.inventory}})
+    },
+    jump1(){
+      this.$router.push({path:"/app",query:{path:"/"}})
     }
   }
 };
@@ -215,6 +218,7 @@ export default {
 .t27,.t28,.t29,.t30 {
   position: absolute;
   width: 118px;
+  cursor: pointer;
   height: 168px;
   bottom:137px;
 }
