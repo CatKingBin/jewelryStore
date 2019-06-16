@@ -38,11 +38,10 @@ export default {
       },
       handleChange(value) {
         this.num1=value;
-        console.log(this.num1)
+        // console.log(this.num1)
       },
       add(){
-        console.log(666)
-        console.log(this.num1)
+        // console.log(this.num1)
          this.$http //发起ajax请求
         .get("http://localhost:9999/gouwucheadd", {
           params: { //请求携带的参数

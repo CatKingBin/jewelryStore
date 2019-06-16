@@ -25,30 +25,27 @@ export default {
   height: 400px;
 }
 .header {
-  margin-bottom: 20px;
+  margin-bottom: -2px;
 }
 .body {
-  margin-top: 20px;
   text-align: center;
+}
+ul {
+  background-color: whitesmoke;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 ul li {
   text-align: center;
 }
-ul li:nth-child(1) {
-  margin-top: 40px;
+ul li:first-child {
   font-size: 20px;
   font-weight: bold;
 }
-ul li:nth-child(2),
-ul li:nth-child(3),
-ul li:nth-child(4),
-ul li:nth-child(5) {
-margin-top: 30px;
+ul li:not(first-child) {
   font-size: 16px;
 }
-ul li:nth-child(6) {
-  margin-top: 30px;
-  margin-bottom: 60px;
-  font-size: 16px;
-}
+
 </style>

@@ -61,7 +61,7 @@ export default {
         })
         .then(result => {
           //请求成功
-        console.log(result.data)
+        // console.log(result.data)
         
         this.products=result.data
         // console.log(this.arr)

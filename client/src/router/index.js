@@ -16,13 +16,7 @@ import CallUs from '@/components/CallUs'
 import Design from '@/components/Design'
 import Message from '@/components/Message'
 import App from '@/components/App'
-
-
-
-
-
-
-
+import Store from '@/components/Store'
 
 Vue.use(Router)
 
@@ -106,6 +100,11 @@ export default new Router({
 			path: '/app',
 			name: 'App',
 			component: App
+		},
+		{
+			path: '/store',
+			name: 'Store',
+			component: Store
 		}
   ]
 })

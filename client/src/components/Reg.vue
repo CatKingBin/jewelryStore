@@ -25,7 +25,8 @@
             <div v-if="mima3">两次密码不同！</div>
           </div>
           <div class="we">
-            <input type="checkbox" v-model="msg">我已阅读<span>《今生今饰注册协议》</span>
+            <input type="checkbox" v-model="msg" id="yuedu">
+            <label for="yuedu">我已阅读<span>《今生今饰注册协议》</span></label> 
             <div v-if="gou">请勾选协议</div>
           </div>
           <div>
@@ -124,7 +125,7 @@ export default {
             ]
           })
           .then(result => {
-            console.log(result);
+            // console.log(result);
 
             this.$router.push("login");
           })

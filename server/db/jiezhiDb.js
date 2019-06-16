@@ -51,13 +51,23 @@ function findall(storename,cb) {
 		if(err) { //连接失败
 			console.log(err)
 		} else { //连接成功,conn是连接对象
-			let sql = `select * from xianglian where title like '%${storename}%' union all select * from ershi where title like '%${storename}%' union all select * from shoushi where title like '%${storename}%' union all select * from jiezhi where title like '%${storename}%'`;
-			conn.query(sql,function(err1, results) {
-				cb(results);
-				
-				//释放连接池
-				conn.release();
-			})
+			// console.log(storename)
+			if(storename==undefined){
+				let sql = `select * from xianglian union all select * from ershi union all select * from shoushi union all select * from jiezhi`;
+			    conn.query(sql,function(err1, results) {
+					cb(results);
+					//释放连接池
+					conn.release();
+				})
+			}else{
+				let sql = `select * from xianglian where title like '%${storename}%' union all select * from ershi where title like '%${storename}%' union all select * from shoushi where title like '%${storename}%' union all select * from jiezhi where title like '%${storename}%'`;
+			    conn.query(sql,function(err1, results) {
+					cb(results);
+					//释放连接池
+					conn.release();
+				})
+			}
+			
 		}
 	});
 }

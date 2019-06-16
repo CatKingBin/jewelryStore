@@ -26,7 +26,7 @@
         </el-menu-item>
         <el-submenu index="2">
           <template slot="title">
-            <router-link class="mylink" to="xianglian">商品展示</router-link>
+            <router-link class="mylink" to="store">商品展示</router-link>
           </template>
           <el-menu-item index="2-1">
             <router-link class="mylink" to="xianglian">项链</router-link>
@@ -91,7 +91,7 @@ export default {
   },
   methods: {
     handleSelect(key, keyPath) {
-      console.log(key, keyPath);
+      // console.log(key, keyPath);
     },
     find() {
     
