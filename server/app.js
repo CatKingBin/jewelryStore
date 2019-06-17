@@ -178,7 +178,7 @@ const ershiController=require("./controller/ershi")
 const shoushiController=require("./controller/shoushi")
 const jiezhiController=require("./controller/jiezhi")
 app.get("/*",function(req,res){
-	res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
+	res.setHeader("Access-Control-Allow-Origin","*")
 	var urlObj=url.parse(req.url);
 	var urlPath=urlObj.pathname;
 	if(urlPath=="/xianglian"){  //项链列表
