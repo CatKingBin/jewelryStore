@@ -4,12 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import axios from 'axios'
-import ElementUI from 'element-ui';//引入组件库
-import 'element-ui/lib/theme-chalk/index.css';//引入组件库的css文件
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 
-//声明使用组件库
-Vue.use(ElementUI);
-Vue.prototype.$http = axios;
+Vue.use(ElementUI)
+Vue.prototype.$http = axios
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

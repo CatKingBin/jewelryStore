@@ -57,8 +57,25 @@ function login1(username,passwd,cb) {
         }
      });
    };
- // login('xm','123')
+
+   function liuyan(msg,cb) { 
+	
+      userDb.liuyan(msg,function(result) { 
+        // console.log(result)
+            cb( result)
+     });
+   };
+
+   function getmsg(cb) { 
+	
+    userDb.getmsg(function(result) {
+          cb( result)
+   });
+ };
 exports.login=login;
 exports.login1=login1;
 exports.reg=reg;
 exports.reg1=reg1;
+exports.liuyan=liuyan;
+exports.getmsg=getmsg;
+

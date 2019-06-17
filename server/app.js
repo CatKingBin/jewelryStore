@@ -5,6 +5,10 @@ const app = express();
 const bodyParser=require("body-parser");
 app.use(bodyParser.urlencoded({extended:false}));
 
+//导入cookie模块
+var cookieParser = require('cookie-parser');  
+app.use(cookieParser());  
+
 //管理员注册
 const userService=require("./service/userService")
 
@@ -117,12 +121,14 @@ app.get("/userlogin.do", function(req, res) {
 });
 app.post("/userlogin.do",function(req,res){
 	res.setHeader("Access-Control-Allow-Origin","*")
+	// res.clearCookie('name')
 //	console.log(req.body)
 	let username = req.body.name;
 	let passwd = req.body.pwd;
 	userService.login1(username, passwd, function(passwd1) {
 		if(passwd1){
 //			密码正确
+            res.cookie("name",username,{})
 			res.send(true);
 		}else{
 //			密码错误
@@ -130,6 +136,39 @@ app.post("/userlogin.do",function(req,res){
 		}
 	})
 	
+});
+
+app.get("/buy", function(req, res) {
+	res.setHeader("Access-Control-Allow-Origin","*")
+	console.log(req)
+	  var obj = req.cookies;
+	  var i = "name" in obj;
+		if(i){
+			// cookie存在
+			res.send({log:true});
+		}else {
+			// cookie不存在
+			res.send({log:false});
+		}
+	
+});
+app.get("/liuyan", function(req, res) {
+	res.setHeader("Access-Control-Allow-Origin","*")
+	let msg = JSON.parse(req.query.msg)
+	// console.log(msg)
+	userService.liuyan(msg, function(result) {
+		//    console.log(result)
+			res.send(result);
+		
+	})
+});
+app.get("/getmsg", function(req, res) {
+	res.setHeader("Access-Control-Allow-Origin","*")
+	userService.getmsg(function(result) {
+		//    console.log(result)
+			res.send(result);
+		
+	})
 });
 
 var url=require("url");

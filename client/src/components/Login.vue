@@ -72,7 +72,7 @@ export default {
             }
           })
           .then(result => {
-            console.log(result.data);
+            // console.log(result.data);
             if (!result.data) {
               this.exsit = true;
             } else {
@@ -106,11 +106,11 @@ export default {
             ]
           })
           .then(result => {
-            console.log(result);
-            if (result.data == false) {
+            // console.log(result.data);
+            if (!result.data) {
               this.mima2 = true;
             } else {
-              this.$router.push({ path: "/", query: { name: "aa" } });
+              this.$router.push({ path: "/", query:  "aa" });
             }
           })
           .catch(err => {
