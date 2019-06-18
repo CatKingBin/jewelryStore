@@ -136,10 +136,33 @@ export default {
 		}
 				},
 		jiesuan(){
-			this.$confirm("亲,您还没有登录哦!", "提示", {
-          //弹框
-          type: "warning"
+			this.$http //发起ajax请求
+        .get("http://localhost:9999/buy", {
+          params: {
+            //请求携带的参数
+            obj: {
+            }
+          }
         })
+        .then(result => {
+          //请求成功
+          // console.log(result)
+          if (result.data) {
+            this.$message({
+              message: "亲，支付页面正在创建中呢!",
+              type: "success"
+            });
+          } else {
+            this.$message({
+              message: "亲，你还没有登录哦!",
+              type: "warning"
+            });
+          }
+        })
+        .catch(function() {
+          //请求失败
+          alert("支付失败");
+        });
 		}
 			},
 			computed:{

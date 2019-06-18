@@ -13,7 +13,8 @@ app.use(cookieParser());
 const userService=require("./service/userService")
 
 app.get("/adminreg.do", function(req, res) {
-	res.setHeader("Access-Control-Allow-Origin","*")
+	res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
+	res.setHeader("Access-Control-Allow-Credentials","true")
 	let username=req.query.name
 	let passwd=req.query.passwd
 adminService.reg1(username, passwd, function(myname) {
@@ -26,7 +27,8 @@ adminService.reg1(username, passwd, function(myname) {
 	})
 });
 app.post("/adminreg.do",function(req,res){
-	res.setHeader("Access-Control-Allow-Origin","*")
+	res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
+	res.setHeader("Access-Control-Allow-Credentials","true")
 	let username = req.body.name;
 	let passwd = req.body.pwd;
 	adminService.reg(username, passwd, function(myname) {
@@ -45,7 +47,8 @@ const adminService=require("./service/adminService")
 
 //判断账号是否存在
 app.get("/adminlogin.do", function(req, res) {
-	res.setHeader("Access-Control-Allow-Origin","*")
+	res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
+	res.setHeader("Access-Control-Allow-Credentials","true")
 	let username=req.query.name
 	let passwd=req.query.passwd
 	adminService.login(username, passwd, function(name1) {
@@ -59,7 +62,8 @@ app.get("/adminlogin.do", function(req, res) {
 	})
 });
 app.post("/adminlogin.do",function(req,res){
-	res.setHeader("Access-Control-Allow-Origin","*")
+	res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
+	res.setHeader("Access-Control-Allow-Credentials","true")
 	let username = req.body.name;
 	let passwd = req.body.pwd;
 	adminService.login1(username, passwd, function(passwd1) {
@@ -75,7 +79,8 @@ app.post("/adminlogin.do",function(req,res){
 
 //用户注册
 app.get("/userreg.do", function(req, res) {
-	res.setHeader("Access-Control-Allow-Origin","*")
+	res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
+	res.setHeader("Access-Control-Allow-Credentials","true")
 	let username=req.query.name
 	let passwd=req.query.pwd
 userService.reg1(username, passwd, function(myname) {
@@ -88,7 +93,8 @@ userService.reg1(username, passwd, function(myname) {
 	})
 });
 app.post("/userreg.do",function(req,res){
-	res.setHeader("Access-Control-Allow-Origin","*")
+	res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
+	res.setHeader("Access-Control-Allow-Credentials","true")
 	let username = req.body.name;
 	let passwd = req.body.pwd;
 	userService.reg(username, passwd, function(myname) {
@@ -106,7 +112,8 @@ app.post("/userreg.do",function(req,res){
 //用户登录
 //判断账号是否存在
 app.get("/userlogin.do", function(req, res) {
-	res.setHeader("Access-Control-Allow-Origin","*")
+	res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
+	res.setHeader("Access-Control-Allow-Credentials","true")
 	let username=req.query.name
 	let passwd=req.query.passwd
 	userService.login(username, passwd, function(name1) {
@@ -120,7 +127,8 @@ app.get("/userlogin.do", function(req, res) {
 	})
 });
 app.post("/userlogin.do",function(req,res){
-	res.setHeader("Access-Control-Allow-Origin","*")
+	res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
+	res.setHeader("Access-Control-Allow-Credentials","true")
 	// res.clearCookie('name')
 //	console.log(req.body)
 	let username = req.body.name;
@@ -139,21 +147,23 @@ app.post("/userlogin.do",function(req,res){
 });
 
 app.get("/buy", function(req, res) {
-	res.setHeader("Access-Control-Allow-Origin","*")
+	res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
+	res.setHeader("Access-Control-Allow-Credentials","true")
 	console.log(req)
 	  var obj = req.cookies;
 	  var i = "name" in obj;
 		if(i){
 			// cookie存在
-			res.send({log:true});
+			res.send(true);
 		}else {
 			// cookie不存在
-			res.send({log:false});
+			res.send(false);
 		}
 	
 });
 app.get("/liuyan", function(req, res) {
-	res.setHeader("Access-Control-Allow-Origin","*")
+	res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
+	res.setHeader("Access-Control-Allow-Credentials","true")
 	let msg = JSON.parse(req.query.msg)
 	// console.log(msg)
 	userService.liuyan(msg, function(result) {
@@ -163,7 +173,8 @@ app.get("/liuyan", function(req, res) {
 	})
 });
 app.get("/huifu", function(req, res) {
-	res.setHeader("Access-Control-Allow-Origin","*")
+	res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
+	res.setHeader("Access-Control-Allow-Credentials","true")
 	let msg = JSON.parse(req.query.msg)
 	// console.log(msg)
 	adminService.huifu(msg, function(result) {
@@ -173,14 +184,14 @@ app.get("/huifu", function(req, res) {
 	})
 });
 app.get("/getmsg", function(req, res) {
-	res.setHeader("Access-Control-Allow-Origin","*")
+	res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
+	res.setHeader("Access-Control-Allow-Credentials","true")
 	userService.getmsg(function(result) {
 		//    console.log(result)
 			res.send(result);
 		
 	})
 });
-
 var url=require("url");
 //项链请求
 const xianglianController=require("./controller/xianglian")
@@ -188,7 +199,8 @@ const ershiController=require("./controller/ershi")
 const shoushiController=require("./controller/shoushi")
 const jiezhiController=require("./controller/jiezhi")
 app.get("/*",function(req,res){
-	res.setHeader("Access-Control-Allow-Origin","*")
+	res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
+	res.setHeader("Access-Control-Allow-Credentials","true")
 	var urlObj=url.parse(req.url);
 	var urlPath=urlObj.pathname;
 	if(urlPath=="/xianglian"){  //项链列表

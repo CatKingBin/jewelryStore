@@ -76,10 +76,10 @@ function huifu(msg, cb) {
 		if(err) { //连接失败
 			console.log(err)
 		} else { //连接成功,conn是连接对象
-			console.log(msg)
+			// console.log(msg)
 			let sql = "select content from msguser where usertel=?";
 			conn.query(sql, [msg.usertel], function(err1, results) {
-				   console.log(results)
+				//    console.log(results)
 							let nr= results[0].content+msg.content
 							let sql = "update msguser set content=? where usertel=?";
 							conn.query(sql, [nr,msg.usertel], function(err1, results) {

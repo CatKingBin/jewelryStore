@@ -81,18 +81,21 @@ export default {
   background-size: cover;
 }
 .el-carousel__item:nth-child(4n) {
-  background-image: url(http://img3.imgtn.bdimg.com/it/u=3539017204,224705441&fm=26&gp=0.jpg);
+  background-image: url(../assets/xianglian1.jpg);
+  background-size: contain;
 }
 
 .el-carousel__item:nth-child(4n + 1) {
-  background-image: url(http://img4.imgtn.bdimg.com/it/u=1074931463,154668257&fm=26&gp=0.jpg);
+  background-image: url(../assets/xianglian3.jpg);
+  background-size: contain;
 }
 .el-carousel__item:nth-child(4n + 2) {
-  background-color: rgb(220, 245, 242);
-  background-image: url(http://img4.ido-love.com/art/pc/151334059046823088.png);
+  background-image: url(../assets/xianglian5.jpg);
+  background-size: contain;
 }
 .el-carousel__item:nth-child(4n + 3) {
-  background-image: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555745936&di=7a81afb95b021a9a8faa71bcf104bec4&imgtype=jpg&er=1&src=http%3A%2F%2Fimg.alicdn.com%2Fimgextra%2Fi4%2F683623708%2FTB2hajwlVXXXXaOXpXXXXXXXXXX_%21%21683623708.jpg);
+  background-image: url(../assets/xianglian2.jpg);
+  background-size: contain;
 }
 #shuju {
   width: 100%;

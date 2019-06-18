@@ -8,10 +8,10 @@
     <div class="body">
       <div class="left">
         <el-table :data="tableData" height="350" border style="width: 100%">
-          <el-table-column prop="username" label="姓名" width="80"></el-table-column>
-          <el-table-column prop="usersite" label="地址" width="200"></el-table-column>
-          <el-table-column prop="content" label="内容" width="300"></el-table-column>
-          <el-table-column prop="date" label="日期" width="160"></el-table-column>
+          <el-table-column prop="username" label="用户姓名" width="150"></el-table-column>
+          <el-table-column prop="usersite" label="用户地址" width="150"></el-table-column>
+          <el-table-column prop="content" label="留言内容" width="400"></el-table-column>
+          <el-table-column prop="date" label="留言日期" width="150"></el-table-column>
         </el-table>
       </div>
       <div class="right">
@@ -131,7 +131,19 @@ export default {
         this.liuyan = true;
       } else {
         this.liuyan = false;
-        this.$http
+        this.$http //发起ajax请求
+        .get("http://localhost:9999/buy", {
+          params: {
+            //请求携带的参数
+            obj: {
+            }
+          }
+        })
+        .then(result => {
+          //请求成功
+          // console.log(result)
+          if (result.data) {
+           this.$http
           .get("http://localhost:9999/liuyan", {
             params: {
               msg: this.msg
@@ -143,10 +155,27 @@ export default {
               message: "留言提交成功!",
               type: "success"
             });
+            this.msg.username="";
+            this.msg.usertel="";
+            this.msg.usersite="";
+            this.msg.content=""
+
           })
           .catch(function() {
             alert("失败");
           });
+          } else {
+            this.$message({
+              message: "亲，你还没有登录哦!",
+              type: "warning"
+            });
+          }
+        })
+        .catch(function() {
+          //请求失败
+          alert("支付失败");
+        });
+        
       }
     },
     getmsg() {
@@ -155,7 +184,7 @@ export default {
           params: {}
         })
         .then(result => {
-          console.log(result.data);
+          // console.log(result.data);
           this.tableData = result.data;
         })
         .catch(function() {
@@ -192,6 +221,10 @@ input {
 }
 textarea {
   padding: 3px;
+}
+.right {
+  height: 350px;
+  overflow: auto;
 }
 .right div:not(:nth-child(1)) {
   margin-top: 20px;

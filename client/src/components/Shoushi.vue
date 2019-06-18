@@ -76,11 +76,11 @@ export default {
   background-size: cover;
 }
   .el-carousel__item:nth-child(2n) {
-     background-image: url(http://img3.ido-love.com/art/pc/151331017881787674.png);
+     background-image: url(../assets/shoushi1.jpg);
   }
   
   .el-carousel__item:nth-child(2n+1) {
-     background-image: url(http://img5.ido-love.com/art/pc/151334426849419799.png);
+     background-image: url(../assets/shoushi2.jpg);
   }
 #shuju {
   width: 100%;

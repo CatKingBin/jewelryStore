@@ -61,8 +61,11 @@ export default {
         .then(result => {
           //请求成功
           // console.log(result)
-          if (result.data.log==true) {
-            console.log("登录成功")
+          if (result.data) {
+            this.$message({
+              message: "亲，支付页面正在创建中呢!",
+              type: "success"
+            });
           } else {
             this.$message({
               message: "亲，你还没有登录哦!",
@@ -72,7 +75,7 @@ export default {
         })
         .catch(function() {
           //请求失败
-          alert("添加失败");
+          alert("支付失败");
         });
     },
     handleChange(value) {

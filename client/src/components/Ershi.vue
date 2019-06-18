@@ -79,7 +79,7 @@ export default {
   position: relative;
   opacity: 0.7;
   background-size: contain;
-  background-image: url(http://img2.imgtn.bdimg.com/it/u=611454647,1323463851&fm=15&gp=0.jpg);
+  background-image: url(../assets/ershict.jpg);
   background-size: contain;
 }
 .topimg1 {
@@ -91,7 +91,7 @@ export default {
   top: 65%;
   left: 25%;
   z-index: 99;
-  background-image: url(http://img0.imgtn.bdimg.com/it/u=2734117651,293715203&fm=26&gp=0.jpg);
+  background-image: url(../assets/ershi2.jpg);
 }
 .topimg2 {
   width: 250px;
@@ -101,7 +101,7 @@ export default {
   background-size: cover;
   top: 20%;
   left: 38%;
-  background-image: url(http://img4.imgtn.bdimg.com/it/u=646554755,2786917241&fm=26&gp=0.jpg);
+  background-image: url(../assets/ershi1.jpg);
 }
 .topimg3 {
   width: 200px;
@@ -111,7 +111,7 @@ export default {
   background-size: cover;
   top: 65%;
   left: 55%;
-  background-image: url(http://img2.imgtn.bdimg.com/it/u=1492424836,1588587910&fm=26&gp=0.jpg);
+  background-image: url(../assets/ershi3.jpg);
 }
 #shuju {
   width: 100%;

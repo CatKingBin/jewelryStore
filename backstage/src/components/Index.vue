@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555103057967&di=54aade8b5f6191f6d43c4244a75db29a&imgtype=0&src=http%3A%2F%2Fimg2.ph.126.net%2F1oyr0bYw8wti8S8M-_Ao0Q%3D%3D%2F679480593879675257.gif" alt="">
+		<img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=125455359,3504178492&fm=26&gp=0.jpg" alt="">
 	</div>
 </template>
 
@@ -19,6 +19,8 @@
 	}
 	img{
 		margin-top: 100px;
+		width: 550px;
+		height: 350px;
 	}
      
 </style>
