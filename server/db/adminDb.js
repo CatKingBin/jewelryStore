@@ -71,7 +71,29 @@ function selectNameByUsernameAndPasswd(username, passwd, cb) {
 }
 // selectNameByUsernameAndPasswd("xm",'123',function(){})//模拟数据
 
+function huifu(msg, cb) {
+	dbutils.pool.getConnection(function(err, conn) {
+		if(err) { //连接失败
+			console.log(err)
+		} else { //连接成功,conn是连接对象
+			console.log(msg)
+			let sql = "select content from msguser where usertel=?";
+			conn.query(sql, [msg.usertel], function(err1, results) {
+				   console.log(results)
+							let nr= results[0].content+msg.content
+							let sql = "update msguser set content=? where usertel=?";
+							conn.query(sql, [nr,msg.usertel], function(err1, results) {
+						//    console.log(results)
+								cb(true);
+							})
+						
+						conn.release();//释放连接池
+					})
+		}
+	});
+}
 exports.insertUser = insertUser;
 exports.insertUser1 = insertUser1;
 exports.selectNameByUsername = selectNameByUsername;
 exports.selectNameByUsernameAndPasswd = selectNameByUsernameAndPasswd;
+exports.huifu = huifu;

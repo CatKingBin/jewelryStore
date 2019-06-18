@@ -52,7 +52,7 @@
 			<router-link to="/look">
       <el-menu-item index="4">
         <i class="el-icon-setting"></i>
-        <span slot="title">查看更多</span>
+        <span slot="title">客户留言</span>
       </el-menu-item>
 			</router-link>
         </el-menu>

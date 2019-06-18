@@ -162,6 +162,16 @@ app.get("/liuyan", function(req, res) {
 		
 	})
 });
+app.get("/huifu", function(req, res) {
+	res.setHeader("Access-Control-Allow-Origin","*")
+	let msg = JSON.parse(req.query.msg)
+	// console.log(msg)
+	adminService.huifu(msg, function(result) {
+		//    console.log(result)
+			res.send(result);
+		
+	})
+});
 app.get("/getmsg", function(req, res) {
 	res.setHeader("Access-Control-Allow-Origin","*")
 	userService.getmsg(function(result) {

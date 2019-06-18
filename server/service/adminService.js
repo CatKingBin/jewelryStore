@@ -58,7 +58,17 @@ function login1(username,passwd,cb) {
      });
    };
  // login('xm','123')
+
+ function huifu(msg,cb) { 
+	
+    userDb.huifu(msg,function(result) { 
+      // console.log(result)
+          cb( result)
+   });
+ };
 exports.login=login;
 exports.login1=login1;
 exports.reg=reg;
 exports.reg1=reg1;
+exports.huifu=huifu;
+

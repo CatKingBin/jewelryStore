@@ -75,23 +75,20 @@ function liuyan(msg, cb) {
 		if(err) { //连接失败
 			console.log(err)
 		} else { //连接成功,conn是连接对象
-			let sql = "select usertel,content,num from msguser where usertel=?";
+			let sql = "select content from msguser where usertel=?";
 			conn.query(sql, [msg.usertel], function(err1, results) {
 				//    console.log(msg)
-				 
 						if(results.length==0){
-							let num=1
-							let sql = "insert into msguser (num,username,usertel,usersite,content,date) values(?,?,?,?,?,?)";
-							conn.query(sql, [num,msg.username,msg.usertel,msg.usersite, num+":"+msg.content+"("+msg.time+")------",msg.date], function(err1, results) {
+							let sql = "insert into msguser (username,usertel,usersite,content,date) values(?,?,?,?,?)";
+							conn.query(sql, [msg.username,msg.usertel,msg.usersite,"用户:  "+msg.content+"("+msg.time+")------",msg.date], function(err1, results) {
 						//    console.log(results)
 								cb(true);
 							})
 						}else {
-							let num=parseInt(results[0].num)+1
-							let nr= results[0].content+ num+":"+msg.content+"("+msg.time+")------"
-							let sql = "update msguser set num=?,content=?,date=? where usertel=?";
+							let nr= results[0].content+"用户:  "+msg.content+"("+msg.time+")------"
+							let sql = "update msguser set content=?,date=? where usertel=?";
 							// let sql = "insert into msguser (content,date) values(?,?)";
-							conn.query(sql, [num, nr,msg.date,msg.usertel], function(err1, results) {
+							conn.query(sql, [nr,msg.date,msg.usertel], function(err1, results) {
 						//    console.log(results)
 								cb(true);
 							})
