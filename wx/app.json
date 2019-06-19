@@ -1,0 +1,62 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/product/product",
+    "pages/ershi/ershi",
+    "pages/login/login",
+    "pages/reg/reg",
+   
+    
+    
+    
+    "pages/baobei/baobei",
+    
+    
+    
+    "pages/activity/activity",
+   
+     "pages/logs/logs",
+    "pages/classify/classify"
+    
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "position":"top",
+    "backgroundColor": "#ffffff",
+    "color": "#808080",
+    "selectedColor": "#d4237a",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "img/a.png",
+        "selectedIconPath": "img/aa.png"
+      },
+      {
+        "pagePath": "pages/product/product",
+        "text": "全部宝贝",
+        "iconPath": "img/b.png",
+        "selectedIconPath": "img/bb.png"
+      },
+      {
+        "pagePath": "pages/activity/activity",
+        "text": "优惠活动",
+        "iconPath": "img/c.png",
+        "selectedIconPath": "img/cc.png"
+      },
+      {
+        "pagePath": "pages/login/login",
+        "text": "个人中心",
+        "iconPath": "img/g.png",
+        "selectedIconPath": "img/gg.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

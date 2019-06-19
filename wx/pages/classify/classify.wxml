@@ -1,0 +1,2 @@
+<!--pages/classify/classify.wxml-->
+<text bindtap='jump'>注册</text>

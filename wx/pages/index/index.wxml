@@ -1,0 +1,37 @@
+<!--index.wxml-->
+<view class='box'>
+  <view class='header7 bs'></view>
+  <view class='header8 bs'></view>
+  <view class='header9 bs'></view>
+  <view class='header10 bs'></view>
+  <view class='header11 bs'>
+    <view bindtap='jump'id="0"></view>
+    <view class='r'bindtap='jump' id="1"></view>
+  </view>
+  <view class='header12 bs'></view>
+  <view class='header13 bs'></view>
+  <view class='header14 bs'></view>
+  <view class='header15 bs'>
+    <view class='up15'>
+      <view bindtap='jump'id="2"></view>
+      <view bindtap='jump'id="3"></view>
+    </view>
+    <view class='down15'>
+      <view bindtap='jump'id="4"></view>
+      <view bindtap='jump'id="5"></view>
+    </view>
+  </view>
+  <view class='header20 bs'></view>
+  <view class='header21 bs'></view>
+  <view class='header22 bs'>
+    <view bindtap='jump'id="6"></view>
+    <view bindtap='jump'id="7"></view>
+  </view>
+  <view class='header23 bs'>
+    <view bindtap='jump'id="8"></view>
+    <view bindtap='jump'id="9"></view>
+  </view>
+  <view class='header36 bs'></view>
+  <view class='header37 bs'></view>
+  <view class='header38 bs'></view>
+</view>

@@ -1,0 +1,138 @@
+/**index.wxss**/
+
+.header1 {
+  width: 750rpx;
+  height: 480rpx;
+  background-image: url("./1.png");
+  background-size: cover;
+}
+
+.bs {
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+
+
+.header7{
+  width: 750rpx;
+  height: 480rpx;
+  background-image: url("https://gw.alicdn.com/imgextra/i3/367859690/O1CN018hLdKM2LS4NtPQrr0_!!367859690-0-shop_design.jpg_790x10000Q75.jpg_.webp");
+}
+.header8{
+  width: 750rpx;
+  height: 480rpx;
+  background-image: url("https://gw.alicdn.com/imgextra/i1/367859690/O1CN01eOo4Py2LS4Ny95pX3_!!367859690-0-shop_design.jpg_790x10000Q75.jpg_.webp");
+}
+.header9{
+  width: 750rpx;
+  height: 412rpx;
+  background-image: url("https://gw.alicdn.com/imgextra/i4/367859690/O1CN01tIWcks2LS4NyRvZbn_!!367859690-0-shop_design.jpg_790x10000Q75.jpg_.webp");
+}
+.header10{
+  width: 750rpx;
+  height: 480rpx;
+  background-image: url("https://gw.alicdn.com/imgextra/i1/367859690/O1CN01SidMIc2LS4NvslesT_!!367859690-0-shop_design.jpg_790x10000Q75.jpg_.webp");
+}
+.header11 {
+  display: flex;
+  justify-content: space-around;
+  width: 750rpx;
+  height: 480rpx;
+  background-image: url("https://gw.alicdn.com/imgextra/i2/367859690/O1CN01cEpG9s2LS4NvKIMKS_!!367859690-0-shop_design.jpg_790x10000Q75.jpg_.webp");
+}
+.header11 view {
+  width: 200rpx;
+  height: 324rpx;
+  margin-top: 80rpx;
+}
+.r {
+  margin-left: -40px;
+}
+.header12{
+  width: 750rpx;
+  height: 112rpx;
+  background-image: url("https://gw.alicdn.com/imgextra/i1/367859690/O1CN01tXfWYF2LS4NyRyBpO_!!367859690-0-shop_design.jpg_790x10000Q75.jpg_.webp");
+}
+.header13{
+  width: 750rpx;
+  height: 480rpx;
+  background-image: url("https://gw.alicdn.com/imgextra/i2/367859690/O1CN01CQiiXk2LS4Ny9fkZC_!!367859690-0-shop_design.jpg_790x10000Q75.jpg_.webp");
+}
+.header14{
+  width: 750rpx;
+  height: 480rpx;
+  background-image: url("https://gw.alicdn.com/imgextra/i1/367859690/O1CN01QweHgs2LS4NySZien_!!367859690-0-shop_design.jpg_790x10000Q75.jpg_.webp");
+}
+.header15{
+  width: 750rpx;
+  height: 480rpx;
+  background-image: url("https://gw.alicdn.com/imgextra/i1/367859690/O1CN011PL2gX2LS4Ny9gkuF_!!367859690-0-shop_design.jpg_790x10000Q75.jpg_.webp");
+}
+.up15 {
+ display: flex;
+ justify-content: space-around;
+}
+.up15 view {
+  width: 185rpx;
+  height: 182rpx;
+  margin-top: -47rpx;
+}
+.down15 {
+ display: flex;
+ justify-content: space-around;
+}
+.down15 view {
+  width: 180rpx;
+  height: 145rpx;
+  margin-top: 143rpx;
+}
+.header20{
+  width: 750rpx;
+  height: 480rpx;
+  background-image: url("https://gw.alicdn.com/imgextra/i2/367859690/O1CN01W6myH72LS4NwjbHtc_!!367859690-0-shop_design.jpg_790x10000Q75.jpg_.webp");
+}
+.header21 {
+  width: 750rpx;
+  height: 480rpx;
+  background-image: url("https://gw.alicdn.com/imgextra/i4/367859690/O1CN01Hw735w2LS4NvKyzNQ_!!367859690-0-shop_design.jpg_790x10000Q75.jpg_.webp");
+}
+.header22{
+  display: flex;
+  justify-content: space-around;
+  width: 750rpx;
+  height: 480rpx;
+  background-image: url("https://gw.alicdn.com/imgextra/i1/367859690/O1CN01Fiz5Tl2LS4NwjbgpZ_!!367859690-0-shop_design.jpg_790x10000Q75.jpg_.webp");
+}
+.header22 view {
+  width: 245rpx;
+  height: 390rpx;
+  margin-top: -63rpx;
+}
+.header23{
+  display: flex;
+  justify-content: space-around;
+  width: 750rpx;
+  height: 480rpx;
+  background-image: url("https://gw.alicdn.com/imgextra/i3/367859690/O1CN01kHMfhz2LS4NowvdQy_!!367859690-0-shop_design.jpg_790x10000Q75.jpg_.webp");
+}
+.header23 view {
+  width: 245rpx;
+  height: 415rpx;
+  margin-top: -21rpx;
+}
+.header36{
+  width: 750rpx;
+  height: 480rpx;
+  background-image: url("https://gw.alicdn.com/imgextra/i1/367859690/O1CN01ed07Gs2LS4NvL7uyL_!!367859690-0-shop_design.jpg_790x10000Q75.jpg_.webp");
+}
+.header37{
+  width: 750rpx;
+  height: 480rpx;
+  background-image: url("https://gw.alicdn.com/imgextra/i2/367859690/O1CN01XnKK2G2LS4NySnLSZ_!!367859690-0-shop_design.jpg_790x10000Q75.jpg_.webp");
+}
+.header38{
+  width: 750rpx;
+  height: 162rpx;
+  background-image: url("https://gw.alicdn.com/imgextra/i4/367859690/O1CN01GzwfHO2LS4NvL5dby_!!367859690-0-shop_design.jpg_790x10000Q75.jpg_.webp");
+}

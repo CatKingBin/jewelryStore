@@ -1,0 +1,38 @@
+<!--pages/login/login.wxml-->
+<view class='bgimg'>
+  <view class='touxiang'>
+    <image src='http://img4.imgtn.bdimg.com/it/u=2730960486,1812539582&fm=26&gp=0.jpg'></image>
+  </view>
+
+<!-- account ： 账号
+password ：密码
+subPassword ：确认密码 -->
+
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="login_info" >
+      <view class="weui-cells weui-cells_after-title login_form">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">账号:<text class='zhanghao' wx:if="{{zhanghao}}">账号不能为空!</text></view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="请输入账号" type="text" maxlength="20" value="{{name}}" focus="true" name="name" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">密码:<text class='mima' wx:if="{{mima}}">密码不能为空!</text><text wx:if="{{yanzheng}}" class='yanzheng'>密码错误!</text></view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="请输入密码" type="password" maxlength="10" value="{{pwd}}" name="pwd" />
+          </view>
+        </view>
+        
+        <view class="weui-btn-area">
+          <button class="weui-btn" type="primary" formType="submit" bindtap='jump'>登录</button>
+        </view>
+        <button bindtap='jumpreg'>没有账号 立即注册</button>
+      </view>
+    </view>
+  </form>
+</view>

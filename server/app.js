@@ -93,7 +93,9 @@ userService.reg1(username, passwd, function(myname) {
 	})
 });
 app.post("/userreg.do",function(req,res){
-	res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
+	// res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
+	res.setHeader("Access-Control-Allow-Origin","*")
+
 	res.setHeader("Access-Control-Allow-Credentials","true")
 	let username = req.body.name;
 	let passwd = req.body.pwd;
@@ -127,7 +129,8 @@ app.get("/userlogin.do", function(req, res) {
 	})
 });
 app.post("/userlogin.do",function(req,res){
-	res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
+	// res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
+	res.setHeader("Access-Control-Allow-Origin","*")
 	res.setHeader("Access-Control-Allow-Credentials","true")
 	// res.clearCookie('name')
 //	console.log(req.body)
@@ -147,7 +150,8 @@ app.post("/userlogin.do",function(req,res){
 });
 
 app.get("/buy", function(req, res) {
-	res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
+	// res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
+	res.setHeader("Access-Control-Allow-Origin","*")
 	res.setHeader("Access-Control-Allow-Credentials","true")
 	console.log(req)
 	  var obj = req.cookies;
@@ -199,7 +203,8 @@ const ershiController=require("./controller/ershi")
 const shoushiController=require("./controller/shoushi")
 const jiezhiController=require("./controller/jiezhi")
 app.get("/*",function(req,res){
-	res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
+	// res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
+	res.setHeader("Access-Control-Allow-Origin","*")
 	res.setHeader("Access-Control-Allow-Credentials","true")
 	var urlObj=url.parse(req.url);
 	var urlPath=urlObj.pathname;
