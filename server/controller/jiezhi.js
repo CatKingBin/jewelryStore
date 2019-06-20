@@ -26,13 +26,17 @@ function findall(req, res){
 }
 function gouwucheadd(req, res){
     let obj=JSON.parse(req.query.obj)
+    let cookie=req.cookies.name
     
-    jiezhiService.gouwucheadd(obj,function(results) {
+    jiezhiService.gouwucheadd(obj,cookie,function(results) {
         res.send(results)
     })
 }
 function gouwuche(req, res){
-    jiezhiService.gouwuche(function(results) {
+    
+    let cookie=req.cookies.name
+    // console.log(cookie)
+    jiezhiService.gouwuche(cookie, function(results) {
         res.send(results)
     })
 }

@@ -93,8 +93,8 @@ userService.reg1(username, passwd, function(myname) {
 	})
 });
 app.post("/userreg.do",function(req,res){
-	// res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
-	res.setHeader("Access-Control-Allow-Origin","*")
+	res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
+	// res.setHeader("Access-Control-Allow-Origin","*")
 
 	res.setHeader("Access-Control-Allow-Credentials","true")
 	let username = req.body.name;
@@ -129,11 +129,11 @@ app.get("/userlogin.do", function(req, res) {
 	})
 });
 app.post("/userlogin.do",function(req,res){
-	// res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
-	res.setHeader("Access-Control-Allow-Origin","*")
+	res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
+	// res.setHeader("Access-Control-Allow-Origin","*")
 	res.setHeader("Access-Control-Allow-Credentials","true")
-	// res.clearCookie('name')
-//	console.log(req.body)
+	res.clearCookie('name')
+    //	console.log(req.body)
 	let username = req.body.name;
 	let passwd = req.body.pwd;
 	userService.login1(username, passwd, function(passwd1) {
@@ -150,10 +150,10 @@ app.post("/userlogin.do",function(req,res){
 });
 
 app.get("/buy", function(req, res) {
-	// res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
-	res.setHeader("Access-Control-Allow-Origin","*")
+	res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
+	// res.setHeader("Access-Control-Allow-Origin","*")
 	res.setHeader("Access-Control-Allow-Credentials","true")
-	console.log(req)
+	// console.log(req)
 	  var obj = req.cookies;
 	  var i = "name" in obj;
 		if(i){
@@ -203,8 +203,8 @@ const ershiController=require("./controller/ershi")
 const shoushiController=require("./controller/shoushi")
 const jiezhiController=require("./controller/jiezhi")
 app.get("/*",function(req,res){
-	// res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
-	res.setHeader("Access-Control-Allow-Origin","*")
+	res.setHeader("Access-Control-Allow-Origin","http://localhost:8080")
+	// res.setHeader("Access-Control-Allow-Origin","*")
 	res.setHeader("Access-Control-Allow-Credentials","true")
 	var urlObj=url.parse(req.url);
 	var urlPath=urlObj.pathname;

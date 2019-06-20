@@ -33,14 +33,14 @@ function findall(storename,cb){
              });
 }
 
-function gouwucheadd(obj,cb){
-        jiezhiDb.gouwucheadd(obj,function(results) { 
+function gouwucheadd(obj,cookie,cb){
+        jiezhiDb.gouwucheadd(obj,cookie,function(results) { 
                     // 返回数据成功
                     cb(results);
              });
 }
-function gouwuche(cb){
-        jiezhiDb.gouwuche(function(results) { 
+function gouwuche(cookie,cb){
+        jiezhiDb.gouwuche(cookie,function(results) { 
                     // 返回数据成功
                     cb(results);
              });
