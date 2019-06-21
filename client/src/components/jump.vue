@@ -98,10 +98,19 @@ export default {
         })
         .then(result => {
           //请求成功
-          this.$message({
+          console.log(result.data)
+          if(result.data){
+this.$message({
             message: "成功加入购物车",
             type: "success"
+          })
+          }else{
+            this.$message({
+            message: "亲，你还没有登录呢",
+            type: "warning"
           });
+          }
+          
         })
         .catch(function() {
           //请求失败

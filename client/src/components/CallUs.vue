@@ -1,7 +1,7 @@
 <template>
     <div id="app">
       <div class="header">
-          <img src="http://img5.imgtn.bdimg.com/it/u=3189798789,3888485958&fm=26&gp=0.jpg" alt="">
+          <img src="../assets/callus.jpg" alt="">
         </div>
         <hr/>
         <ul>

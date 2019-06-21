@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="header">
-      <img src="http://img3.imgtn.bdimg.com/it/u=2160769668,4292077207&fm=26&gp=0.jpg" alt>
+      <img src="../assets/liuyan.jpg" alt>
     </div>
     <hr>
     <div class="txt">您的宝贵建议,就是我们无限的动力!</div>

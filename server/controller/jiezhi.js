@@ -26,19 +26,36 @@ function findall(req, res){
 }
 function gouwucheadd(req, res){
     let obj=JSON.parse(req.query.obj)
-    let cookie=req.cookies.name
+    let objs = req.cookies;
+    let i = "name" in objs;
+    let cookie=objs.name
+    if(i){
+        jiezhiService.gouwucheadd(obj,cookie,function(results) {
+            res.send(results)
+        })
+    }else{
+         // cookie不存在
+         res.send(false);
+    }
     
-    jiezhiService.gouwucheadd(obj,cookie,function(results) {
-        res.send(results)
-    })
 }
 function gouwuche(req, res){
     
-    let cookie=req.cookies.name
+    
     // console.log(cookie)
-    jiezhiService.gouwuche(cookie, function(results) {
-        res.send(results)
-    })
+    let obj = req.cookies;
+    let i = "name" in obj;
+    let cookie=obj.name
+      if(i){
+          // cookie存在
+          jiezhiService.gouwuche(cookie, function(results) {
+            res.send(results)
+        })
+      }else {
+          // cookie不存在
+          res.send(false);
+      }
+    
 }
 function gouwuchedel(req, res){
     let obj=req.query.obj
